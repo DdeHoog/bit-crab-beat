@@ -5,7 +5,7 @@ const SPEED = 500.0
 const JUMP_VELOCITY = -600.0
 const FRIC = 50
 
-# Get gravity from the project settings to bve synced with RigidBody nodes.
+# Get gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 
