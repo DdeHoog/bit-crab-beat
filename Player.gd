@@ -15,10 +15,6 @@ func _ready() -> void:
 	screen_size = get_viewport_rect().size
 	#hide()#hides player on gamestart
 	
-func start(pos):
-	position = pos
-	show()
-	$PlayerHitBox.disabled = false
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.

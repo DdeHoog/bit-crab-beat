@@ -33,9 +33,6 @@ layer_0/tile_data = PackedInt32Array(131068, 0, 0, 131069, 65536, 0, 131070, 0, 
 [node name="Player" parent="." instance=ExtResource("2_r0du0")]
 position = Vector2(64, 0)
 
-[node name="StartPosition" type="Marker2D" parent="."]
-position = Vector2(-576, 0)
-
 [node name="Enemies" type="Node2D" parent="."]
 position = Vector2(3144, 120)
 
