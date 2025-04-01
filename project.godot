@@ -11,9 +11,8 @@ config_version=5
 [application]
 
 config/name="Bit Crab Beat"
-run/main_scene="uid://bv2a7ebnp7gm8"
+run/main_scene="uid://fyslyx0wbxu4"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://icon.svg"
 
 [input]
 
