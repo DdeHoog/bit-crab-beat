@@ -5,9 +5,20 @@ const SPEED = 500.0
 const JUMP_VELOCITY = -600.0
 const FRIC = 50
 
+var screen_size # Game window size
+
 # Get gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	screen_size = get_viewport_rect().size
+	#hide()#hides player on gamestart
+	
+func start(pos):
+	position = pos
+	show()
+	$PlayerHitBox.disabled = false
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.

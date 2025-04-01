@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://bv2a7ebnp7gm8"]
+[gd_scene load_steps=7 format=3 uid="uid://bv2a7ebnp7gm8"]
 
+[ext_resource type="Script" uid="uid://c42ky31c6wpmh" path="res://main.gd" id="1_cm0pq"]
 [ext_resource type="Texture2D" uid="uid://bl8i67gqwvf6r" path="res://icon.svg" id="1_uu6xs"]
 [ext_resource type="PackedScene" uid="uid://bbxp72pt8malx" path="res://player.tscn" id="2_r0du0"]
 [ext_resource type="PackedScene" uid="uid://d4nw0dmr3e73g" path="res://Enemy.tscn" id="3_r0du0"]
@@ -22,6 +23,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_cm0pq")
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_cm0pq")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_fos0i")
@@ -30,6 +32,9 @@ layer_0/tile_data = PackedInt32Array(131068, 0, 0, 131069, 65536, 0, 131070, 0, 
 
 [node name="Player" parent="." instance=ExtResource("2_r0du0")]
 position = Vector2(64, 0)
+
+[node name="StartPosition" type="Marker2D" parent="."]
+position = Vector2(-576, 0)
 
 [node name="Enemies" type="Node2D" parent="."]
 position = Vector2(3144, 120)
