@@ -25,6 +25,27 @@ position = Vector2(4608, 0)
 [node name="Ground4" parent="." instance=ExtResource("2_jyhfs")]
 position = Vector2(6912, 0)
 
+[node name="Ground5" parent="." instance=ExtResource("2_jyhfs")]
+position = Vector2(9216, 0)
+
+[node name="Ground6" parent="." instance=ExtResource("2_jyhfs")]
+position = Vector2(11520, 0)
+
+[node name="Ground7" parent="." instance=ExtResource("2_jyhfs")]
+position = Vector2(13824, 0)
+
+[node name="Ground8" parent="." instance=ExtResource("2_jyhfs")]
+position = Vector2(16128, 0)
+
+[node name="Ground9" parent="." instance=ExtResource("2_jyhfs")]
+position = Vector2(18432, 0)
+
+[node name="Ground10" parent="." instance=ExtResource("2_jyhfs")]
+position = Vector2(20736, 0)
+
+[node name="Ground11" parent="." instance=ExtResource("2_jyhfs")]
+position = Vector2(23040, 0)
+
 [node name="Crab" parent="." instance=ExtResource("3_tbgi4")]
 position = Vector2(0, 448)
 
@@ -40,6 +61,114 @@ script = ExtResource("7_o6xl0")
 
 [node name="PLACEHOLDERNAME-BARREL" parent="." instance=ExtResource("8_tipki")]
 position = Vector2(512, 512)
+
+[node name="PLACEHOLDERNAME-BARREL11" parent="." instance=ExtResource("8_tipki")]
+position = Vector2(5632, 512)
+
+[node name="PLACEHOLDERNAME-BARREL12" parent="." instance=ExtResource("8_tipki")]
+position = Vector2(6144, 512)
+
+[node name="PLACEHOLDERNAME-BARREL13" parent="." instance=ExtResource("8_tipki")]
+position = Vector2(6656, 512)
+
+[node name="PLACEHOLDERNAME-BARREL14" parent="." instance=ExtResource("8_tipki")]
+position = Vector2(7168, 512)
+
+[node name="PLACEHOLDERNAME-BARREL15" parent="." instance=ExtResource("8_tipki")]
+position = Vector2(7680, 512)
+
+[node name="PLACEHOLDERNAME-BARREL16" parent="." instance=ExtResource("8_tipki")]
+position = Vector2(8192, 512)
+
+[node name="PLACEHOLDERNAME-BARREL17" parent="." instance=ExtResource("8_tipki")]
+position = Vector2(8704, 512)
+
+[node name="PLACEHOLDERNAME-BARREL18" parent="." instance=ExtResource("8_tipki")]
+position = Vector2(9216, 512)
+
+[node name="PLACEHOLDERNAME-BARREL19" parent="." instance=ExtResource("8_tipki")]
+position = Vector2(9728, 512)
+
+[node name="PLACEHOLDERNAME-BARREL20" parent="." instance=ExtResource("8_tipki")]
+position = Vector2(10240, 512)
+
+[node name="PLACEHOLDERNAME-BARREL21" parent="." instance=ExtResource("8_tipki")]
+position = Vector2(10752, 512)
+
+[node name="PLACEHOLDERNAME-BARREL22" parent="." instance=ExtResource("8_tipki")]
+position = Vector2(11264, 512)
+
+[node name="PLACEHOLDERNAME-BARREL23" parent="." instance=ExtResource("8_tipki")]
+position = Vector2(11776, 512)
+
+[node name="PLACEHOLDERNAME-BARREL24" parent="." instance=ExtResource("8_tipki")]
+position = Vector2(12288, 512)
+
+[node name="PLACEHOLDERNAME-BARREL25" parent="." instance=ExtResource("8_tipki")]
+position = Vector2(12800, 512)
+
+[node name="PLACEHOLDERNAME-BARREL26" parent="." instance=ExtResource("8_tipki")]
+position = Vector2(13312, 512)
+
+[node name="PLACEHOLDERNAME-BARREL27" parent="." instance=ExtResource("8_tipki")]
+position = Vector2(13824, 512)
+
+[node name="PLACEHOLDERNAME-BARREL28" parent="." instance=ExtResource("8_tipki")]
+position = Vector2(14336, 512)
+
+[node name="PLACEHOLDERNAME-BARREL29" parent="." instance=ExtResource("8_tipki")]
+position = Vector2(14848, 512)
+
+[node name="PLACEHOLDERNAME-BARREL30" parent="." instance=ExtResource("8_tipki")]
+position = Vector2(15360, 512)
+
+[node name="PLACEHOLDERNAME-BARREL31" parent="." instance=ExtResource("8_tipki")]
+position = Vector2(15872, 512)
+
+[node name="PLACEHOLDERNAME-BARREL32" parent="." instance=ExtResource("8_tipki")]
+position = Vector2(16384, 512)
+
+[node name="PLACEHOLDERNAME-BARREL33" parent="." instance=ExtResource("8_tipki")]
+position = Vector2(16896, 512)
+
+[node name="PLACEHOLDERNAME-BARREL34" parent="." instance=ExtResource("8_tipki")]
+position = Vector2(17408, 512)
+
+[node name="PLACEHOLDERNAME-BARREL35" parent="." instance=ExtResource("8_tipki")]
+position = Vector2(17920, 512)
+
+[node name="PLACEHOLDERNAME-BARREL36" parent="." instance=ExtResource("8_tipki")]
+position = Vector2(18432, 512)
+
+[node name="PLACEHOLDERNAME-BARREL37" parent="." instance=ExtResource("8_tipki")]
+position = Vector2(18944, 512)
+
+[node name="PLACEHOLDERNAME-BARREL38" parent="." instance=ExtResource("8_tipki")]
+position = Vector2(19456, 512)
+
+[node name="PLACEHOLDERNAME-BARREL39" parent="." instance=ExtResource("8_tipki")]
+position = Vector2(19968, 512)
+
+[node name="PLACEHOLDERNAME-BARREL40" parent="." instance=ExtResource("8_tipki")]
+position = Vector2(20480, 512)
+
+[node name="PLACEHOLDERNAME-BARREL41" parent="." instance=ExtResource("8_tipki")]
+position = Vector2(20992, 512)
+
+[node name="PLACEHOLDERNAME-BARREL42" parent="." instance=ExtResource("8_tipki")]
+position = Vector2(21504, 512)
+
+[node name="PLACEHOLDERNAME-BARREL43" parent="." instance=ExtResource("8_tipki")]
+position = Vector2(22016, 512)
+
+[node name="PLACEHOLDERNAME-BARREL44" parent="." instance=ExtResource("8_tipki")]
+position = Vector2(22528, 512)
+
+[node name="PLACEHOLDERNAME-BARREL45" parent="." instance=ExtResource("8_tipki")]
+position = Vector2(23040, 483)
+
+[node name="PLACEHOLDERNAME-BARREL46" parent="." instance=ExtResource("8_tipki")]
+position = Vector2(23552, 512)
 
 [node name="PLACEHOLDERNAME-BARREL2" parent="." instance=ExtResource("8_tipki")]
 position = Vector2(1024, 512)
