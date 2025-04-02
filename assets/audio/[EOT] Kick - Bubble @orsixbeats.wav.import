@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://fluq4rgp2okx"
+path="res://.godot/imported/[EOT] Kick - Bubble @orsixbeats.wav-06f7d4c08736c85a6045ffcceb7dc175.sample"
+
+[deps]
+
+source_file="res://assets/audio/[EOT] Kick - Bubble @orsixbeats.wav"
+dest_files=["res://.godot/imported/[EOT] Kick - Bubble @orsixbeats.wav-06f7d4c08736c85a6045ffcceb7dc175.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

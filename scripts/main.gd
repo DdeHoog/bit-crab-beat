@@ -3,7 +3,7 @@ extends Node
 #game variables 
 const CRAB_START_POS := Vector2i(0, 485) #hardcoded start position of playersprite
 const CAM_START_POS := Vector2i(250, 324) #middle of gamescreen - adjust later to match viewport!
-const START_SPEED : float = 213.34 #Starting off speed 
+const START_SPEED : float = 213.34 * 2 #Starting off speed 
 const MAX_SPEED : int = 1000 #Define a max speed, incase we increase speed overtime, added limit.
 const SPEED_MODIFIER := 50000 #Needed to divide speed to not go giga fast in 2 sec - temp fix, remove later?
 const SCORE_MODIFIER := 1000 #Needed to divide the score to keep numbers reasonable - temp fix, remove later.

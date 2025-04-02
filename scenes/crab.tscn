@@ -1,8 +1,8 @@
 [gd_scene load_steps=14 format=3 uid="uid://dq5kitkbpxa6u"]
 
 [ext_resource type="Script" uid="uid://dhcneg0aaclpu" path="res://scripts/crab.gd" id="1_rq6vx"]
-[ext_resource type="AudioStream" uid="uid://dscpg6m666dta" path="res://assets/audio/jump.wav" id="2_rq6vx"]
 [ext_resource type="Texture2D" uid="uid://cqrr0ogop2t6q" path="res://assets/img/Crab sprites V1.png" id="3_83q5x"]
+[ext_resource type="AudioStream" uid="uid://fluq4rgp2okx" path="res://assets/audio/[EOT] Kick - Bubble @orsixbeats.wav" id="3_rq6vx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i3pe7"]
 atlas = ExtResource("3_83q5x")
@@ -73,7 +73,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Run",
-"speed": 4.8
+"speed": 1.2
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_83q5x"]
@@ -92,9 +92,8 @@ script = ExtResource("1_rq6vx")
 texture_filter = 1
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_q4iun")
-animation = &"Run"
+animation = &"Jump"
 autoplay = "Idle"
-frame_progress = 0.559721
 
 [node name="RunCol" type="CollisionShape2D" parent="."]
 visibility_layer = 2
@@ -106,5 +105,5 @@ position = Vector2(0.5, 4.375)
 shape = SubResource("CapsuleShape2D_rftv6")
 
 [node name="JumpSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_rq6vx")
+stream = ExtResource("3_rq6vx")
 volume_db = -25.0

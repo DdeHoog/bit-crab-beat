@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://fyslyx0wbxu4"]
+[gd_scene load_steps=10 format=3 uid="uid://fyslyx0wbxu4"]
 
 [ext_resource type="PackedScene" uid="uid://4mytnumcpbra" path="res://scenes/bg.tscn" id="1_sugp2"]
 [ext_resource type="Script" uid="uid://rqnpqcj43e85" path="res://scripts/main.gd" id="1_tbgi4"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bpunnmdbrunrw" path="res://scenes/hud.tscn" id="6_tefeu"]
 [ext_resource type="Script" uid="uid://mry38476ou0" path="res://scripts/conductor.gd" id="7_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://cibifkwfrce7j" path="res://scenes/placeholdername_barrel.tscn" id="8_tipki"]
+[ext_resource type="Texture2D" uid="uid://ca01iuenpdkvj" path="res://assets/img/obstacles/stump.png" id="10_choun"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_tbgi4")
@@ -58,9 +59,6 @@ position = Vector2(576, 324)
 stream = ExtResource("5_tefeu")
 volume_db = -22.847
 script = ExtResource("7_o6xl0")
-
-[node name="PLACEHOLDERNAME-BARREL" parent="." instance=ExtResource("8_tipki")]
-position = Vector2(512, 512)
 
 [node name="PLACEHOLDERNAME-BARREL11" parent="." instance=ExtResource("8_tipki")]
 position = Vector2(5632, 512)
@@ -165,21 +163,21 @@ position = Vector2(22016, 512)
 position = Vector2(22528, 512)
 
 [node name="PLACEHOLDERNAME-BARREL45" parent="." instance=ExtResource("8_tipki")]
-position = Vector2(23040, 483)
+position = Vector2(23040, 512)
 
 [node name="PLACEHOLDERNAME-BARREL46" parent="." instance=ExtResource("8_tipki")]
 position = Vector2(23552, 512)
 
-[node name="PLACEHOLDERNAME-BARREL2" parent="." instance=ExtResource("8_tipki")]
-position = Vector2(1024, 512)
-
-[node name="PLACEHOLDERNAME-BARREL3" parent="." instance=ExtResource("8_tipki")]
+[node name="PLACEHOLDERNAME-BARREL55" parent="." instance=ExtResource("8_tipki")]
 position = Vector2(1536, 512)
 
-[node name="PLACEHOLDERNAME-BARREL4" parent="." instance=ExtResource("8_tipki")]
-position = Vector2(2048, 512)
+[node name="PLACEHOLDERNAME-BARREL57" parent="." instance=ExtResource("8_tipki")]
+position = Vector2(1024, 512)
 
 [node name="PLACEHOLDERNAME-BARREL5" parent="." instance=ExtResource("8_tipki")]
+position = Vector2(2048, 512)
+
+[node name="PLACEHOLDERNAME-BARREL47" parent="." instance=ExtResource("8_tipki")]
 position = Vector2(2560, 512)
 
 [node name="PLACEHOLDERNAME-BARREL6" parent="." instance=ExtResource("8_tipki")]
@@ -196,3 +194,7 @@ position = Vector2(4608, 512)
 
 [node name="PLACEHOLDERNAME-BARREL10" parent="." instance=ExtResource("8_tipki")]
 position = Vector2(5120, 512)
+
+[node name="Stump" type="Sprite2D" parent="."]
+position = Vector2(1024, 483)
+texture = ExtResource("10_choun")
