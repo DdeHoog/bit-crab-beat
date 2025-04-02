@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c4rlb0tycrggt" path="res://assets/img/background/plx-5.png" id="5_twoho"]
 
 [node name="Bg" type="ParallaxBackground"]
+visible = false
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_36ycx")

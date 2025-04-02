@@ -1,7 +1,7 @@
 extends AudioStreamPlayer
 
 @export var bpm := 100
-@export var measures := 4
+@export var beats_in_measure := 4
 
 #tracking the beat and song position
 var song_position = 0.0
@@ -9,7 +9,7 @@ var song_position_in_beats = 0
 var sec_per_beat = 60.0 / bpm
 var last_reported_beat = -1 # Initialize to -1 to ensure first beat is reported.
 var beats_before_start = 0
-var current_measure = 1
+var current_beat_in_measure = 1
 var first_beat_reported = false # New flag
 
 var song_duration
@@ -20,8 +20,8 @@ var total_beats
 var closest = 0
 var time_off_beat = 0.0
 
-signal beat(position)
-signal measure(position)
+signal beat_in_song(position)
+signal beat_in_measure(position)
 
 func _ready():
 	sec_per_beat = 60.0 / bpm
@@ -40,16 +40,16 @@ func _report_beat():
 	if last_reported_beat < song_position_in_beats:
 		if not first_beat_reported: #check if first beat has been reported.
 			emit_signal("beat", song_position_in_beats)
-			emit_signal("measure", current_measure)
+			emit_signal("measure", current_beat_in_measure)
 			first_beat_reported = true #set flag to true.
 		else:
-			if current_measure > measures:
-				current_measure = 1
+			if current_beat_in_measure > beats_in_measure:
+				current_beat_in_measure = 1
 			emit_signal("beat", song_position_in_beats)
-			emit_signal("measure", current_measure)
-		print(current_measure)
+			emit_signal("measure", current_beat_in_measure)
+		print(current_beat_in_measure)
 		last_reported_beat = song_position_in_beats
-		current_measure += 1
+		current_beat_in_measure += 1
 
 func play_with_beat_offset(num):
 	beats_before_start = num

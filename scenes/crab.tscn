@@ -48,7 +48,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Idle",
-"speed": 5.0
+"speed": 0.6
 }, {
 "frames": [{
 "duration": 1.0,
@@ -73,7 +73,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Run",
-"speed": 8.0
+"speed": 4.8
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_83q5x"]
@@ -92,9 +92,9 @@ script = ExtResource("1_rq6vx")
 texture_filter = 1
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_q4iun")
-animation = &"Idle"
+animation = &"Run"
 autoplay = "Idle"
-frame_progress = 0.0404472
+frame_progress = 0.559721
 
 [node name="RunCol" type="CollisionShape2D" parent="."]
 visibility_layer = 2

@@ -26,7 +26,7 @@ position = Vector2(4608, 0)
 position = Vector2(6912, 0)
 
 [node name="Crab" parent="." instance=ExtResource("3_tbgi4")]
-position = Vector2(0, 448)
+position = Vector2(64, 448)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 324)
@@ -41,29 +41,4 @@ script = ExtResource("7_o6xl0")
 [node name="PLACEHOLDERNAME-BARREL" parent="." instance=ExtResource("8_tipki")]
 position = Vector2(512, 512)
 
-[node name="PLACEHOLDERNAME-BARREL2" parent="." instance=ExtResource("8_tipki")]
-position = Vector2(1024, 512)
-
-[node name="PLACEHOLDERNAME-BARREL3" parent="." instance=ExtResource("8_tipki")]
-position = Vector2(1536, 512)
-
-[node name="PLACEHOLDERNAME-BARREL4" parent="." instance=ExtResource("8_tipki")]
-position = Vector2(2048, 512)
-
-[node name="PLACEHOLDERNAME-BARREL5" parent="." instance=ExtResource("8_tipki")]
-position = Vector2(2560, 512)
-
-[node name="PLACEHOLDERNAME-BARREL6" parent="." instance=ExtResource("8_tipki")]
-position = Vector2(3072, 512)
-
-[node name="PLACEHOLDERNAME-BARREL7" parent="." instance=ExtResource("8_tipki")]
-position = Vector2(3584, 512)
-
-[node name="PLACEHOLDERNAME-BARREL8" parent="." instance=ExtResource("8_tipki")]
-position = Vector2(4096, 512)
-
-[node name="PLACEHOLDERNAME-BARREL9" parent="." instance=ExtResource("8_tipki")]
-position = Vector2(4608, 512)
-
-[node name="PLACEHOLDERNAME-BARREL10" parent="." instance=ExtResource("8_tipki")]
-position = Vector2(5120, 512)
+[connection signal="beat" from="Conductor" to="." method="_on_conductor_beat"]

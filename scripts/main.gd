@@ -1,9 +1,9 @@
 extends Node
 
 #game variables 
-const CRAB_START_POS := Vector2i(150, 485) #hardcoded start position of playersprite
-const CAM_START_POS := Vector2i(576, 324) #middle of gamescreen - adjust later to match viewport!
-const START_SPEED : float = 500.0 #Starting off speed 
+const CRAB_START_POS := Vector2i(0, 485) #hardcoded start position of playersprite
+const CAM_START_POS := Vector2i(250, 324) #middle of gamescreen - adjust later to match viewport!
+const START_SPEED : float = 213.34 #Starting off speed 
 const MAX_SPEED : int = 1000 #Define a max speed, incase we increase speed overtime, added limit.
 const SPEED_MODIFIER := 50000 #Needed to divide speed to not go giga fast in 2 sec - temp fix, remove later?
 const SCORE_MODIFIER := 1000 #Needed to divide the score to keep numbers reasonable - temp fix, remove later.
@@ -27,7 +27,7 @@ func new_game():#called upon each new game start
 	$Ground.position = Vector2i(0, 0) #reset ground to starting position; center of gamewindow
 	#Ground.position might need adjustment if we change cam/gamewindow to viewport instead of default window.
 	
-	$Conductor.play()
+
 	
 	#reset hud
 	$HUD.get_node("StartLabel").show()
@@ -41,26 +41,29 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if game_running:#if boolean is true from player input, run game.
-		speed = START_SPEED + score / SPEED_MODIFIER #startspeed + score, increases speed overtime
-		if speed > MAX_SPEED: #prevent speed from rising indefinitely
-			speed = MAX_SPEED
+		$Crab.position.x = $Conductor.song_position * START_SPEED
+		$Camera2D.position.x = $Conductor.song_position * START_SPEED
+		#speed = START_SPEED + score / SPEED_MODIFIER #startspeed + score, increases speed overtime
+		#if speed > MAX_SPEED: #prevent speed from rising indefinitely
+			#speed = MAX_SPEED
 		
 		
 		#Adding speed value to x-axis of camera and crab to move them along, per frame/delta
-		$Crab.position.x += speed * delta #Had to add delta to speed, at 180fps speed would go insane.
-		$Camera2D.position.x += speed * delta
+		#$Crab.position.x += speed * delta #Had to add delta to speed, at 180fps speed would go insane.
+		#$Camera2D.position.x += speed * delta
 			
 		#Updating score
-		score += speed #add speed as score counter, it goes fast on high fps -need to find another way for this
-		show_score()
+		#score += speed #add speed as score counter, it goes fast on high fps -need to find another way for this
+		#show_score()
 		#Adjust score to take into account destroyed obstacles and time spent running?
 			
 		#If camera position about to overtake ground, shift ground on x-axis at width of screen.
 		#This basically puts the ground node at the right end of the current ground, which just loops it
-		if $Camera2D.position.x - $Ground.position.x > screen_size.x * 1.5:
-			$Ground.position.x += screen_size.x
+		#if $Camera2D.position.x - $Ground.position.x > screen_size.x * 1.5:
+			#$Ground.position.x += screen_size.x
 	else:
 		if Input.is_action_pressed("ui_accept"):#if game not running wait for player input.
+				$Conductor.play()
 				game_running = true
 				$HUD.get_node("StartLabel").hide()
 				
@@ -70,7 +73,3 @@ func show_score():
 	#Get the scorelabel from the hud scene, 
 	$HUD.get_node("ScoreLabel").text = "SCORE: " + str(score / SCORE_MODIFIER)
 	
-
-
-func _on_conductor_beat(position: Variant) -> void:
-	set_process(not is_processing())

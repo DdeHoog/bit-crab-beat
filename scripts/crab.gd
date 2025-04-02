@@ -4,6 +4,7 @@ extends CharacterBody2D
 const GRAVITY = 4100
 const JUMP_VELOCITY = -1750
 
+
 #Called every frame 'delta' is elapsed tiem since the previous frame.
 func _physics_process(delta):
 	velocity.y += GRAVITY * delta
