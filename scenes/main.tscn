@@ -17,7 +17,7 @@ script = ExtResource("1_tbgi4")
 [node name="Ground" parent="." instance=ExtResource("2_jyhfs")]
 
 [node name="Crab" parent="." instance=ExtResource("3_tbgi4")]
-position = Vector2(129, 443)
+position = Vector2(64, 448)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 324)
@@ -30,6 +30,6 @@ volume_db = -22.847
 script = ExtResource("7_o6xl0")
 
 [node name="PLACEHOLDERNAME-BARREL" parent="." instance=ExtResource("8_tipki")]
-position = Vector2(960, 504)
+position = Vector2(309, 512)
 
 [connection signal="beat" from="Conductor" to="." method="_on_conductor_beat"]

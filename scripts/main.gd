@@ -27,7 +27,7 @@ func new_game():#called upon each new game start
 	$Ground.position = Vector2i(0, 0) #reset ground to starting position; center of gamewindow
 	#Ground.position might need adjustment if we change cam/gamewindow to viewport instead of default window.
 	
-	$Conductor.play_from_beat(1, 0)
+	$Conductor.play()
 	
 	#reset hud
 	$HUD.get_node("StartLabel").show()
