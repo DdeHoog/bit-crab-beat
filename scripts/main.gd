@@ -45,15 +45,15 @@ func _process(delta):
 		if speed > MAX_SPEED: #prevent speed from rising indefinitely
 			speed = MAX_SPEED
 		
-		if beat_trigger:
-			#Adding speed value to x-axis of camera and crab to move them along, per frame/delta
-			$Crab.position.x += speed * delta #Had to add delta to speed, at 180fps speed would go insane.
-			$Camera2D.position.x += speed * delta
-				
-			#Updating score
-			score += speed #add speed as score counter, it goes fast on high fps -need to find another way for this
-			show_score()
-			#Adjust score to take into account destroyed obstacles and time spent running?
+		
+		#Adding speed value to x-axis of camera and crab to move them along, per frame/delta
+		$Crab.position.x += speed * delta #Had to add delta to speed, at 180fps speed would go insane.
+		$Camera2D.position.x += speed * delta
+			
+		#Updating score
+		score += speed #add speed as score counter, it goes fast on high fps -need to find another way for this
+		show_score()
+		#Adjust score to take into account destroyed obstacles and time spent running?
 			
 		#If camera position about to overtake ground, shift ground on x-axis at width of screen.
 		#This basically puts the ground node at the right end of the current ground, which just loops it
