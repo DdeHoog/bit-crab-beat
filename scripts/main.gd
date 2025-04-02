@@ -12,7 +12,6 @@ var screen_size : Vector2i #prep variable for screensize
 var score : int #variable to keep track of score
 var game_running : bool #boolean to see if game is running or not
 
-
 func new_game():#called upon each new game start
 	#reset variables
 	score = 0 #set score back to 0 for the new game
@@ -44,6 +43,7 @@ func _process(delta):
 		if speed > MAX_SPEED: #prevent speed from rising indefinitely
 				speed = MAX_SPEED
 		
+		
 		#Movement of crab and camera
 		#Adding speed value to x-axis of camera and crab to move them along, per frame/delta
 		$Crab.position.x += speed * delta #Had to add delta to speed, at 180fps speed would go insane.
@@ -70,4 +70,7 @@ func show_score():
 	#Get the scorelabel from the hud scene, 
 	$HUD.get_node("ScoreLabel").text = "SCORE: " + str(score / SCORE_MODIFIER)
 	
-	
+
+func _on_conductor_measure(position):
+	if position == 1:
+			print("test")
