@@ -33,7 +33,7 @@ func new_game():#called upon each new game start
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	screen_size = get_window().size #get the window size, for ground scrolling
-	new_game()
+	new_game()#init new game
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -41,20 +41,17 @@ func _process(delta):
 	if game_running:#if boolean is true from player input, run game.
 		speed = START_SPEED + score / SPEED_MODIFIER #startspeed + score, increases speed overtime
 		if speed > MAX_SPEED: #prevent speed from rising indefinitely
-				speed = MAX_SPEED
+			speed = MAX_SPEED
 		
-		
-		#Movement of crab and camera
 		#Adding speed value to x-axis of camera and crab to move them along, per frame/delta
 		$Crab.position.x += speed * delta #Had to add delta to speed, at 180fps speed would go insane.
 		$Camera2D.position.x += speed * delta
-		
+			
 		#Updating score
 		score += speed #add speed as score counter, it goes fast on high fps -need to find another way for this
 		show_score()
 		#Adjust score to take into account destroyed obstacles and time spent running?
-		
-		#Ground position updating
+			
 		#If camera position about to overtake ground, shift ground on x-axis at width of screen.
 		#This basically puts the ground node at the right end of the current ground, which just loops it
 		if $Camera2D.position.x - $Ground.position.x > screen_size.x * 1.5:
@@ -70,7 +67,3 @@ func show_score():
 	#Get the scorelabel from the hud scene, 
 	$HUD.get_node("ScoreLabel").text = "SCORE: " + str(score / SCORE_MODIFIER)
 	
-
-func _on_conductor_measure(position):
-	if position == 1:
-			print("test")
