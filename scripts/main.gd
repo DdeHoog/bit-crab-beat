@@ -11,12 +11,14 @@ var speed : int #allows for playerspeed to vary based on lvl/score/time
 var screen_size : Vector2i #prep variable for screensize
 var score : int #variable to keep track of score
 var game_running : bool #boolean to see if game is running or not
+var beat_trigger : bool
 
 func new_game():#called upon each new game start
 	#reset variables
 	score = 0 #set score back to 0 for the new game
 	show_score() #displays score even before game start
 	game_running = false #prevent game autostarting
+	beat_trigger = false
 	
 	#To reset all the nodes back to the start
 	$Crab.position = CRAB_START_POS #reset crab to starting position
@@ -43,14 +45,15 @@ func _process(delta):
 		if speed > MAX_SPEED: #prevent speed from rising indefinitely
 			speed = MAX_SPEED
 		
-		#Adding speed value to x-axis of camera and crab to move them along, per frame/delta
-		$Crab.position.x += speed * delta #Had to add delta to speed, at 180fps speed would go insane.
-		$Camera2D.position.x += speed * delta
-			
-		#Updating score
-		score += speed #add speed as score counter, it goes fast on high fps -need to find another way for this
-		show_score()
-		#Adjust score to take into account destroyed obstacles and time spent running?
+		if beat_trigger:
+			#Adding speed value to x-axis of camera and crab to move them along, per frame/delta
+			$Crab.position.x += speed * delta #Had to add delta to speed, at 180fps speed would go insane.
+			$Camera2D.position.x += speed * delta
+				
+			#Updating score
+			score += speed #add speed as score counter, it goes fast on high fps -need to find another way for this
+			show_score()
+			#Adjust score to take into account destroyed obstacles and time spent running?
 			
 		#If camera position about to overtake ground, shift ground on x-axis at width of screen.
 		#This basically puts the ground node at the right end of the current ground, which just loops it
@@ -67,3 +70,7 @@ func show_score():
 	#Get the scorelabel from the hud scene, 
 	$HUD.get_node("ScoreLabel").text = "SCORE: " + str(score / SCORE_MODIFIER)
 	
+
+
+func _on_conductor_beat(position: Variant) -> void:
+	beat_trigger = true

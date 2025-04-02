@@ -31,3 +31,5 @@ script = ExtResource("7_o6xl0")
 
 [node name="PLACEHOLDERNAME-BARREL" parent="." instance=ExtResource("8_tipki")]
 position = Vector2(960, 504)
+
+[connection signal="beat" from="Conductor" to="." method="_on_conductor_beat"]
