@@ -73,4 +73,4 @@ func show_score():
 
 
 func _on_conductor_beat(position: Variant) -> void:
-	beat_trigger = true
+	set_process(not is_processing())
