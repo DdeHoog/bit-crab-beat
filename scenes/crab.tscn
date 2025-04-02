@@ -1,7 +1,7 @@
 [gd_scene load_steps=24 format=3 uid="uid://dq5kitkbpxa6u"]
 
 [ext_resource type="Texture2D" uid="uid://c525jycvvecyd" path="res://assets/img/mort.png" id="1_2b8bq"]
-[ext_resource type="Script" uid="uid://dhcneg0aaclpu" path="res://scenes/crab.gd" id="1_rq6vx"]
+[ext_resource type="Script" uid="uid://dhcneg0aaclpu" path="res://scripts/crab.gd" id="1_rq6vx"]
 [ext_resource type="AudioStream" uid="uid://dscpg6m666dta" path="res://assets/audio/jump.wav" id="2_rq6vx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_83q5x"]
