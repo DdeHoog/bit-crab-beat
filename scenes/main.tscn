@@ -17,7 +17,7 @@ script = ExtResource("1_tbgi4")
 [node name="Ground" parent="." instance=ExtResource("2_jyhfs")]
 
 [node name="Crab" parent="." instance=ExtResource("3_tbgi4")]
-position = Vector2(141, 487)
+position = Vector2(129, 443)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 324)
