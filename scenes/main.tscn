@@ -1,14 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://fyslyx0wbxu4"]
+[gd_scene load_steps=7 format=3 uid="uid://fyslyx0wbxu4"]
 
 [ext_resource type="PackedScene" uid="uid://4mytnumcpbra" path="res://scenes/bg.tscn" id="1_sugp2"]
+[ext_resource type="Script" uid="uid://rqnpqcj43e85" path="res://scripts/main.gd" id="1_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://0hq8euhl8fk1" path="res://scenes/ground.tscn" id="2_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://dq5kitkbpxa6u" path="res://scenes/crab.tscn" id="3_tbgi4"]
 [ext_resource type="AudioStream" uid="uid://cfe5gywm1hiou" path="res://assets/audio/B1T_First Level_D_04IV25@NAGA.ogg" id="5_tefeu"]
-
-[sub_resource type="GDScript" id="GDScript_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://bpunnmdbrunrw" path="res://scenes/hud.tscn" id="6_tefeu"]
 
 [node name="Main" type="Node"]
-script = SubResource("GDScript_jyhfs")
+script = ExtResource("1_tbgi4")
 
 [node name="Bg" parent="." instance=ExtResource("1_sugp2")]
 
@@ -24,3 +24,5 @@ position = Vector2(576, 324)
 stream = ExtResource("5_tefeu")
 autoplay = true
 parameters/looping = true
+
+[node name="HUD" parent="." instance=ExtResource("6_tefeu")]
