@@ -23,3 +23,4 @@ position = Vector2(576, 324)
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_tefeu")
 autoplay = true
+parameters/looping = true
