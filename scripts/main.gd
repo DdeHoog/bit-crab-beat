@@ -26,6 +26,8 @@ func new_game():#called upon each new game start
 	$Ground.position = Vector2i(0, 0) #reset ground to starting position; center of gamewindow
 	#Ground.position might need adjustment if we change cam/gamewindow to viewport instead of default window.
 	
+	$Conductor.play_from_beat(1, 0)
+	
 	#reset hud
 	$HUD.get_node("StartLabel").show()
 
@@ -61,6 +63,8 @@ func _process(delta):
 		if Input.is_action_pressed("ui_accept"):#if game not running wait for player input.
 				game_running = true
 				$HUD.get_node("StartLabel").hide()
+				
+	
 		
 func show_score():
 	#Get the scorelabel from the hud scene, 

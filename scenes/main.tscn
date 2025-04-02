@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://fyslyx0wbxu4"]
+[gd_scene load_steps=9 format=3 uid="uid://fyslyx0wbxu4"]
 
 [ext_resource type="PackedScene" uid="uid://4mytnumcpbra" path="res://scenes/bg.tscn" id="1_sugp2"]
 [ext_resource type="Script" uid="uid://rqnpqcj43e85" path="res://scripts/main.gd" id="1_tbgi4"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://dq5kitkbpxa6u" path="res://scenes/crab.tscn" id="3_tbgi4"]
 [ext_resource type="AudioStream" uid="uid://cfe5gywm1hiou" path="res://assets/audio/B1T_First Level_D_04IV25@NAGA.ogg" id="5_tefeu"]
 [ext_resource type="PackedScene" uid="uid://bpunnmdbrunrw" path="res://scenes/hud.tscn" id="6_tefeu"]
+[ext_resource type="Script" uid="uid://mry38476ou0" path="res://scripts/conductor.gd" id="7_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://cibifkwfrce7j" path="res://scenes/placeholdername_barrel.tscn" id="8_tipki"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_tbgi4")
@@ -20,9 +22,12 @@ position = Vector2(141, 487)
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 324)
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_tefeu")
-autoplay = true
-parameters/looping = true
-
 [node name="HUD" parent="." instance=ExtResource("6_tefeu")]
+
+[node name="Conductor" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_tefeu")
+volume_db = -80.0
+script = ExtResource("7_o6xl0")
+
+[node name="PLACEHOLDERNAME-BARREL" parent="." instance=ExtResource("8_tipki")]
+position = Vector2(960, 504)
