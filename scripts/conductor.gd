@@ -50,7 +50,7 @@ func _report_beat():
 				current_beat_in_measure = 1
 			emit_signal("beat", song_position_in_beats)
 			emit_signal("measure", current_beat_in_measure)
-		print(current_beat_in_measure)
+		#print(current_beat_in_measure)
 		last_reported_beat = song_position_in_beats
 		current_beat_in_measure += 1
 

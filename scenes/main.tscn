@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://fyslyx0wbxu4"]
+[gd_scene load_steps=13 format=3 uid="uid://fyslyx0wbxu4"]
 
 [ext_resource type="PackedScene" uid="uid://4mytnumcpbra" path="res://scenes/bg.tscn" id="1_sugp2"]
 [ext_resource type="Script" uid="uid://rqnpqcj43e85" path="res://scripts/main.gd" id="1_tbgi4"]
@@ -7,9 +7,11 @@
 [ext_resource type="AudioStream" uid="uid://cfe5gywm1hiou" path="res://assets/audio/B1T_First Level_D_04IV25@NAGA.ogg" id="5_tefeu"]
 [ext_resource type="PackedScene" uid="uid://bpunnmdbrunrw" path="res://scenes/hud.tscn" id="6_tefeu"]
 [ext_resource type="Script" uid="uid://mry38476ou0" path="res://scripts/conductor.gd" id="7_o6xl0"]
+[ext_resource type="Texture2D" uid="uid://diwb2mbxwahsj" path="res://assets/img/beatBarBackground.png" id="8_eb6dy"]
 [ext_resource type="PackedScene" uid="uid://cibifkwfrce7j" path="res://scenes/placeholdername_barrel.tscn" id="8_tipki"]
 [ext_resource type="Texture2D" uid="uid://dkw6thaio0hfe" path="res://assets/img/obstacles/rock.png" id="9_choun"]
-[ext_resource type="Script" uid="uid://bl8rivse758ok" path="res://scripts/BaseMover.gd" id="10_ya4ey"]
+[ext_resource type="Script" uid="uid://shurmeggr3hh" path="res://scripts/beat_bar.gd" id="9_trceg"]
+[ext_resource type="Script" path="res://scripts/BaseMover.gd" id="10_ya4ey"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_tbgi4")
@@ -57,20 +59,40 @@ position = Vector2(0, 448)
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 324)
 
-[node name="BeatObject_Left" type="Sprite2D" parent="Camera2D"]
-position = Vector2(-520, 371)
+[node name="HUD" parent="." instance=ExtResource("6_tefeu")]
+
+[node name="BeatObject_Left" type="Sprite2D" parent="HUD"]
+position = Vector2(56, 695)
 rotation = 3.14159
 scale = Vector2(1, -1)
 texture = ExtResource("9_choun")
 script = ExtResource("10_ya4ey")
 
-[node name="BeatObject_Right" type="Sprite2D" parent="Camera2D"]
-position = Vector2(517, 372)
+[node name="BeatObject_Right" type="Sprite2D" parent="HUD"]
+position = Vector2(1093, 696)
 texture = ExtResource("9_choun")
 script = ExtResource("10_ya4ey")
 reverse = true
 
-[node name="HUD" parent="." instance=ExtResource("6_tefeu")]
+[node name="Beat_Bar" type="TextureProgressBar" parent="HUD"]
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -512.0
+offset_top = 704.0
+offset_right = 512.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+fill_mode = 6
+texture_under = ExtResource("8_eb6dy")
+texture_over = ExtResource("8_eb6dy")
+texture_progress = ExtResource("8_eb6dy")
+tint_under = Color(0, 0, 0, 1)
+tint_over = Color(1, 1, 1, 0)
+script = ExtResource("9_trceg")
 
 [node name="Conductor" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_tefeu")
@@ -213,3 +235,6 @@ position = Vector2(4608, 512)
 
 [node name="PLACEHOLDERNAME-BARREL10" parent="Collidables" instance=ExtResource("8_tipki")]
 position = Vector2(5120, 512)
+
+[connection signal="beat_in_measure" from="Conductor" to="HUD/Beat_Bar" method="_on_conductor_beat_in_measure"]
+[connection signal="beat_in_song" from="Conductor" to="HUD/Beat_Bar" method="_on_conductor_beat_in_song"]
