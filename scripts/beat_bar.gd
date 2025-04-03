@@ -17,4 +17,4 @@ func _process(delta: float) -> void:
 func _on_conductor_beat_in_song(position):
 	if value < max_value:
 		value += step
-	print("test")
+	#print("test") 
