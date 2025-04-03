@@ -24,12 +24,14 @@ signal beat_in_song(position)
 signal beat_in_measure(position)
 
 func _ready():
+	#calculating beats
 	sec_per_beat = 60.0 / bpm
 	song_duration = stream.get_length()
 	beats_per_sec = bpm / 60.0
 	total_beats = beats_per_sec * song_duration
 
 func _physics_process(_delta):
+	#calculate in beats where player is in song
 	if playing:
 		song_position = get_playback_position() + AudioServer.get_time_since_last_mix()
 		song_position -= AudioServer.get_output_latency()
@@ -43,6 +45,7 @@ func _report_beat():
 			emit_signal("measure", current_beat_in_measure)
 			first_beat_reported = true #set flag to true.
 		else:
+			#check what the current beat is in measure and update accordingly
 			if current_beat_in_measure > beats_in_measure:
 				current_beat_in_measure = 1
 			emit_signal("beat", song_position_in_beats)
@@ -51,6 +54,7 @@ func _report_beat():
 		last_reported_beat = song_position_in_beats
 		current_beat_in_measure += 1
 
+#starts song but adds an offset if needed to spawn stuff, prob not needed for our game
 func play_with_beat_offset(num):
 	beats_before_start = num
 	$StartTimer.wait_time = sec_per_beat
