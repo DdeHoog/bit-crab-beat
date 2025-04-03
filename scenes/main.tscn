@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://fyslyx0wbxu4"]
+[gd_scene load_steps=9 format=3 uid="uid://fyslyx0wbxu4"]
 
 [ext_resource type="PackedScene" uid="uid://4mytnumcpbra" path="res://scenes/bg.tscn" id="1_sugp2"]
 [ext_resource type="Script" uid="uid://rqnpqcj43e85" path="res://scripts/main.gd" id="1_tbgi4"]
@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://bpunnmdbrunrw" path="res://scenes/hud.tscn" id="6_tefeu"]
 [ext_resource type="Script" uid="uid://mry38476ou0" path="res://scripts/conductor.gd" id="7_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://cibifkwfrce7j" path="res://scenes/placeholdername_barrel.tscn" id="8_tipki"]
-[ext_resource type="Texture2D" uid="uid://ca01iuenpdkvj" path="res://assets/img/obstacles/stump.png" id="10_choun"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_tbgi4")
@@ -16,35 +15,36 @@ script = ExtResource("1_tbgi4")
 [node name="Bg" parent="." instance=ExtResource("1_sugp2")]
 
 [node name="Ground" parent="." instance=ExtResource("2_jyhfs")]
+metadata/_edit_group_ = true
 
-[node name="Ground2" parent="." instance=ExtResource("2_jyhfs")]
+[node name="Ground2" parent="Ground" instance=ExtResource("2_jyhfs")]
 position = Vector2(2304, 0)
 
-[node name="Ground3" parent="." instance=ExtResource("2_jyhfs")]
+[node name="Ground3" parent="Ground" instance=ExtResource("2_jyhfs")]
 position = Vector2(4608, 0)
 
-[node name="Ground4" parent="." instance=ExtResource("2_jyhfs")]
+[node name="Ground4" parent="Ground" instance=ExtResource("2_jyhfs")]
 position = Vector2(6912, 0)
 
-[node name="Ground5" parent="." instance=ExtResource("2_jyhfs")]
+[node name="Ground5" parent="Ground" instance=ExtResource("2_jyhfs")]
 position = Vector2(9216, 0)
 
-[node name="Ground6" parent="." instance=ExtResource("2_jyhfs")]
+[node name="Ground6" parent="Ground" instance=ExtResource("2_jyhfs")]
 position = Vector2(11520, 0)
 
-[node name="Ground7" parent="." instance=ExtResource("2_jyhfs")]
+[node name="Ground7" parent="Ground" instance=ExtResource("2_jyhfs")]
 position = Vector2(13824, 0)
 
-[node name="Ground8" parent="." instance=ExtResource("2_jyhfs")]
+[node name="Ground8" parent="Ground" instance=ExtResource("2_jyhfs")]
 position = Vector2(16128, 0)
 
-[node name="Ground9" parent="." instance=ExtResource("2_jyhfs")]
+[node name="Ground9" parent="Ground" instance=ExtResource("2_jyhfs")]
 position = Vector2(18432, 0)
 
-[node name="Ground10" parent="." instance=ExtResource("2_jyhfs")]
+[node name="Ground10" parent="Ground" instance=ExtResource("2_jyhfs")]
 position = Vector2(20736, 0)
 
-[node name="Ground11" parent="." instance=ExtResource("2_jyhfs")]
+[node name="Ground11" parent="Ground" instance=ExtResource("2_jyhfs")]
 position = Vector2(23040, 0)
 
 [node name="Crab" parent="." instance=ExtResource("3_tbgi4")]
@@ -194,7 +194,3 @@ position = Vector2(4608, 512)
 
 [node name="PLACEHOLDERNAME-BARREL10" parent="." instance=ExtResource("8_tipki")]
 position = Vector2(5120, 512)
-
-[node name="Stump" type="Sprite2D" parent="."]
-position = Vector2(1024, 483)
-texture = ExtResource("10_choun")
