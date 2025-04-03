@@ -14,6 +14,9 @@ script = ExtResource("1_tbgi4")
 
 [node name="Bg" parent="." instance=ExtResource("1_sugp2")]
 
+[node name="Bg2" parent="." instance=ExtResource("1_sugp2")]
+visible = true
+
 [node name="Ground" parent="." instance=ExtResource("2_jyhfs")]
 metadata/_edit_group_ = true
 
