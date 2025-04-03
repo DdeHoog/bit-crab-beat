@@ -57,7 +57,7 @@ position = Vector2(23040, 0)
 position = Vector2(0, 448)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(576, 324)
+position = Vector2(576, 320)
 
 [node name="HUD" parent="." instance=ExtResource("6_tefeu")]
 
@@ -236,5 +236,4 @@ position = Vector2(4608, 512)
 [node name="PLACEHOLDERNAME-BARREL10" parent="Collidables" instance=ExtResource("8_tipki")]
 position = Vector2(5120, 512)
 
-[connection signal="beat_in_measure" from="Conductor" to="HUD/Beat_Bar" method="_on_conductor_beat_in_measure"]
 [connection signal="beat_in_song" from="Conductor" to="HUD/Beat_Bar" method="_on_conductor_beat_in_song"]

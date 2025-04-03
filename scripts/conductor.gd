@@ -41,15 +41,15 @@ func _physics_process(_delta):
 func _report_beat():
 	if last_reported_beat < song_position_in_beats:
 		if not first_beat_reported: #check if first beat has been reported.
-			emit_signal("beat", song_position_in_beats)
-			emit_signal("measure", current_beat_in_measure)
+			emit_signal("beat_in_song", song_position_in_beats)
+			emit_signal("beat_in_measure", current_beat_in_measure)
 			first_beat_reported = true #set flag to true.
 		else:
 			#check what the current beat is in measure and update accordingly
 			if current_beat_in_measure > beats_in_measure:
 				current_beat_in_measure = 1
-			emit_signal("beat", song_position_in_beats)
-			emit_signal("measure", current_beat_in_measure)
+			emit_signal("beat_in_song", song_position_in_beats)
+			emit_signal("beat_in_measure", current_beat_in_measure)
 		#print(current_beat_in_measure)
 		last_reported_beat = song_position_in_beats
 		current_beat_in_measure += 1
