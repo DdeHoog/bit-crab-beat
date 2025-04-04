@@ -11,12 +11,13 @@
 [ext_resource type="PackedScene" uid="uid://cibifkwfrce7j" path="res://scenes/placeholdername_barrel.tscn" id="8_tipki"]
 [ext_resource type="Texture2D" uid="uid://dkw6thaio0hfe" path="res://assets/img/obstacles/rock.png" id="9_choun"]
 [ext_resource type="Script" uid="uid://shurmeggr3hh" path="res://scripts/beat_bar.gd" id="9_trceg"]
-[ext_resource type="Script" path="res://scripts/BaseMover.gd" id="10_ya4ey"]
+[ext_resource type="Script" uid="uid://bl8rivse758ok" path="res://scripts/BaseMover.gd" id="10_ya4ey"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_tbgi4")
 
 [node name="Bg" parent="." instance=ExtResource("1_sugp2")]
+visible = false
 
 [node name="Bg2" parent="." instance=ExtResource("1_sugp2")]
 
