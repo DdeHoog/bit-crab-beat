@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://fyslyx0wbxu4"]
+[gd_scene load_steps=11 format=3 uid="uid://fyslyx0wbxu4"]
 
 [ext_resource type="PackedScene" uid="uid://4mytnumcpbra" path="res://scenes/bg.tscn" id="1_sugp2"]
 [ext_resource type="Script" uid="uid://rqnpqcj43e85" path="res://scripts/main.gd" id="1_tbgi4"]
@@ -7,7 +7,6 @@
 [ext_resource type="AudioStream" uid="uid://cfe5gywm1hiou" path="res://assets/audio/B1T_First Level_D_04IV25@NAGA.ogg" id="5_tefeu"]
 [ext_resource type="PackedScene" uid="uid://bpunnmdbrunrw" path="res://scenes/hud.tscn" id="6_tefeu"]
 [ext_resource type="Script" uid="uid://mry38476ou0" path="res://scripts/conductor.gd" id="7_o6xl0"]
-[ext_resource type="PackedScene" uid="uid://cibifkwfrce7j" path="res://scenes/placeholdername_barrel.tscn" id="8_tipki"]
 [ext_resource type="PackedScene" uid="uid://1p3fkeu6qn7j" path="res://scenes/game_over.tscn" id="8_ya4ey"]
 [ext_resource type="Texture2D" uid="uid://pr8pstyekyse" path="res://assets/img/arrows/arrowkeys1.png" id="9_eb6dy"]
 [ext_resource type="Script" uid="uid://dx2lmbj4a4x64" path="res://scenes/beat_manager.gd" id="10_jkv2x"]
@@ -149,141 +148,5 @@ script = ExtResource("7_o6xl0")
 
 [node name="Collidables" type="Node" parent="."]
 
-[node name="PLACEHOLDERNAME-BARREL11" parent="Collidables" instance=ExtResource("8_tipki")]
-position = Vector2(5632, 512)
-
-[node name="PLACEHOLDERNAME-BARREL12" parent="Collidables" instance=ExtResource("8_tipki")]
-position = Vector2(6144, 512)
-
-[node name="PLACEHOLDERNAME-BARREL13" parent="Collidables" instance=ExtResource("8_tipki")]
-position = Vector2(6656, 512)
-
-[node name="PLACEHOLDERNAME-BARREL14" parent="Collidables" instance=ExtResource("8_tipki")]
-position = Vector2(7168, 512)
-
-[node name="PLACEHOLDERNAME-BARREL15" parent="Collidables" instance=ExtResource("8_tipki")]
-position = Vector2(7680, 512)
-
-[node name="PLACEHOLDERNAME-BARREL16" parent="Collidables" instance=ExtResource("8_tipki")]
-position = Vector2(8192, 512)
-
-[node name="PLACEHOLDERNAME-BARREL17" parent="Collidables" instance=ExtResource("8_tipki")]
-position = Vector2(8704, 512)
-
-[node name="PLACEHOLDERNAME-BARREL18" parent="Collidables" instance=ExtResource("8_tipki")]
-position = Vector2(9216, 512)
-
-[node name="PLACEHOLDERNAME-BARREL19" parent="Collidables" instance=ExtResource("8_tipki")]
-position = Vector2(9728, 512)
-
-[node name="PLACEHOLDERNAME-BARREL20" parent="Collidables" instance=ExtResource("8_tipki")]
-position = Vector2(10240, 512)
-
-[node name="PLACEHOLDERNAME-BARREL21" parent="Collidables" instance=ExtResource("8_tipki")]
-position = Vector2(10752, 512)
-
-[node name="PLACEHOLDERNAME-BARREL22" parent="Collidables" instance=ExtResource("8_tipki")]
-position = Vector2(11264, 512)
-
-[node name="PLACEHOLDERNAME-BARREL23" parent="Collidables" instance=ExtResource("8_tipki")]
-position = Vector2(11776, 512)
-
-[node name="PLACEHOLDERNAME-BARREL24" parent="Collidables" instance=ExtResource("8_tipki")]
-position = Vector2(12288, 512)
-
-[node name="PLACEHOLDERNAME-BARREL25" parent="Collidables" instance=ExtResource("8_tipki")]
-position = Vector2(12800, 512)
-
-[node name="PLACEHOLDERNAME-BARREL26" parent="Collidables" instance=ExtResource("8_tipki")]
-position = Vector2(13312, 512)
-
-[node name="PLACEHOLDERNAME-BARREL27" parent="Collidables" instance=ExtResource("8_tipki")]
-position = Vector2(13824, 512)
-
-[node name="PLACEHOLDERNAME-BARREL28" parent="Collidables" instance=ExtResource("8_tipki")]
-position = Vector2(14336, 512)
-
-[node name="PLACEHOLDERNAME-BARREL29" parent="Collidables" instance=ExtResource("8_tipki")]
-position = Vector2(14848, 512)
-
-[node name="PLACEHOLDERNAME-BARREL30" parent="Collidables" instance=ExtResource("8_tipki")]
-position = Vector2(15360, 512)
-
-[node name="PLACEHOLDERNAME-BARREL31" parent="Collidables" instance=ExtResource("8_tipki")]
-position = Vector2(15872, 512)
-
-[node name="PLACEHOLDERNAME-BARREL32" parent="Collidables" instance=ExtResource("8_tipki")]
-position = Vector2(16384, 512)
-
-[node name="PLACEHOLDERNAME-BARREL33" parent="Collidables" instance=ExtResource("8_tipki")]
-position = Vector2(16896, 512)
-
-[node name="PLACEHOLDERNAME-BARREL34" parent="Collidables" instance=ExtResource("8_tipki")]
-position = Vector2(17408, 512)
-
-[node name="PLACEHOLDERNAME-BARREL35" parent="Collidables" instance=ExtResource("8_tipki")]
-position = Vector2(17920, 512)
-
-[node name="PLACEHOLDERNAME-BARREL36" parent="Collidables" instance=ExtResource("8_tipki")]
-position = Vector2(18432, 512)
-
-[node name="PLACEHOLDERNAME-BARREL37" parent="Collidables" instance=ExtResource("8_tipki")]
-position = Vector2(18944, 512)
-
-[node name="PLACEHOLDERNAME-BARREL38" parent="Collidables" instance=ExtResource("8_tipki")]
-position = Vector2(19456, 512)
-
-[node name="PLACEHOLDERNAME-BARREL39" parent="Collidables" instance=ExtResource("8_tipki")]
-position = Vector2(19968, 512)
-
-[node name="PLACEHOLDERNAME-BARREL40" parent="Collidables" instance=ExtResource("8_tipki")]
-position = Vector2(20480, 512)
-
-[node name="PLACEHOLDERNAME-BARREL41" parent="Collidables" instance=ExtResource("8_tipki")]
-position = Vector2(20992, 512)
-
-[node name="PLACEHOLDERNAME-BARREL42" parent="Collidables" instance=ExtResource("8_tipki")]
-position = Vector2(21504, 512)
-
-[node name="PLACEHOLDERNAME-BARREL43" parent="Collidables" instance=ExtResource("8_tipki")]
-position = Vector2(22016, 512)
-
-[node name="PLACEHOLDERNAME-BARREL44" parent="Collidables" instance=ExtResource("8_tipki")]
-position = Vector2(22528, 512)
-
-[node name="PLACEHOLDERNAME-BARREL45" parent="Collidables" instance=ExtResource("8_tipki")]
-position = Vector2(23040, 512)
-
-[node name="PLACEHOLDERNAME-BARREL46" parent="Collidables" instance=ExtResource("8_tipki")]
-position = Vector2(23552, 512)
-
-[node name="PLACEHOLDERNAME-BARREL55" parent="Collidables" instance=ExtResource("8_tipki")]
-position = Vector2(1536, 512)
-
-[node name="PLACEHOLDERNAME-BARREL57" parent="Collidables" instance=ExtResource("8_tipki")]
-position = Vector2(1024, 512)
-
-[node name="PLACEHOLDERNAME-BARREL5" parent="Collidables" instance=ExtResource("8_tipki")]
-position = Vector2(2048, 512)
-
-[node name="PLACEHOLDERNAME-BARREL47" parent="Collidables" instance=ExtResource("8_tipki")]
-position = Vector2(2560, 512)
-
-[node name="PLACEHOLDERNAME-BARREL6" parent="Collidables" instance=ExtResource("8_tipki")]
-position = Vector2(3072, 512)
-
-[node name="PLACEHOLDERNAME-BARREL7" parent="Collidables" instance=ExtResource("8_tipki")]
-position = Vector2(3584, 512)
-
-[node name="PLACEHOLDERNAME-BARREL8" parent="Collidables" instance=ExtResource("8_tipki")]
-position = Vector2(4096, 512)
-
-[node name="PLACEHOLDERNAME-BARREL9" parent="Collidables" instance=ExtResource("8_tipki")]
-position = Vector2(4608, 512)
-
-[node name="PLACEHOLDERNAME-BARREL10" parent="Collidables" instance=ExtResource("8_tipki")]
-position = Vector2(5120, 512)
-
 [connection signal="beat_in_song" from="Conductor" to="." method="_on_conductor_beat_in_song"]
 [connection signal="beat_in_song" from="Conductor" to="HUD/BeatManager" method="_on_conductor_beat_in_song"]
-[connection signal="body_entered" from="Collidables/PLACEHOLDERNAME-BARREL11" to="." method="_on_placeholdernamebarrel_11_body_entered"]

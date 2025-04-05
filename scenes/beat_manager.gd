@@ -5,7 +5,7 @@ extends Node
 
 var screen_center_x: float
 var distance_per_beat: float
-var beats_to_center := 10 #adjust this for number of steps to center/reset
+var beats_to_center := 1 #adjust this for number of steps to center/reset
 var beats_moved := 0
 var is_moving := false
 
@@ -13,7 +13,7 @@ var is_moving := false
 func _ready() -> void:
 	screen_center_x = get_window().size.x / 2
 	var start_offset = get_window().size.x / 4
-	distance_per_beat = start_offset / 6
+	distance_per_beat = get_window().size.x / 2.2
 	reset_arrow_positions()
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
