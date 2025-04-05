@@ -7,10 +7,10 @@
 [ext_resource type="AudioStream" uid="uid://cfe5gywm1hiou" path="res://assets/audio/B1T_First Level_D_04IV25@NAGA.ogg" id="5_tefeu"]
 [ext_resource type="PackedScene" uid="uid://bpunnmdbrunrw" path="res://scenes/hud.tscn" id="6_tefeu"]
 [ext_resource type="Script" uid="uid://mry38476ou0" path="res://scripts/conductor.gd" id="7_o6xl0"]
-[ext_resource type="Texture2D" uid="uid://diwb2mbxwahsj" path="res://assets/img/beatBarBackground.png" id="8_eb6dy"]
 [ext_resource type="PackedScene" uid="uid://cibifkwfrce7j" path="res://scenes/placeholdername_barrel.tscn" id="8_tipki"]
 [ext_resource type="Texture2D" uid="uid://dkw6thaio0hfe" path="res://assets/img/obstacles/rock.png" id="9_choun"]
-[ext_resource type="Script" uid="uid://shurmeggr3hh" path="res://scripts/beat_bar.gd" id="9_trceg"]
+[ext_resource type="Texture2D" uid="uid://pr8pstyekyse" path="res://assets/img/arrows/arrowkeys1.png" id="9_eb6dy"]
+[ext_resource type="Script" uid="uid://dx2lmbj4a4x64" path="res://scenes/beat_manager.gd" id="10_jkv2x"]
 [ext_resource type="Script" path="res://scripts/BaseMover.gd" id="10_ya4ey"]
 
 [node name="Main" type="Node"]
@@ -130,6 +130,7 @@ position = Vector2(576, 320)
 [node name="HUD" parent="." instance=ExtResource("6_tefeu")]
 
 [node name="BeatObject_Left" type="Sprite2D" parent="HUD"]
+visible = false
 position = Vector2(56, 695)
 rotation = 3.14159
 scale = Vector2(1, -1)
@@ -137,30 +138,22 @@ texture = ExtResource("9_choun")
 script = ExtResource("10_ya4ey")
 
 [node name="BeatObject_Right" type="Sprite2D" parent="HUD"]
+visible = false
 position = Vector2(1093, 696)
 texture = ExtResource("9_choun")
 script = ExtResource("10_ya4ey")
 reverse = true
 
-[node name="Beat_Bar" type="TextureProgressBar" parent="HUD"]
-anchors_preset = 13
-anchor_left = 0.5
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -512.0
-offset_top = 704.0
-offset_right = 512.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-fill_mode = 6
-texture_under = ExtResource("8_eb6dy")
-texture_over = ExtResource("8_eb6dy")
-texture_progress = ExtResource("8_eb6dy")
-tint_under = Color(0, 0, 0, 1)
-tint_over = Color(1, 1, 1, 0)
-script = ExtResource("9_trceg")
+[node name="BeatManager" type="Node" parent="HUD"]
+script = ExtResource("10_jkv2x")
+
+[node name="Beat_Left" type="Sprite2D" parent="HUD/BeatManager"]
+position = Vector2(64, 704)
+texture = ExtResource("9_eb6dy")
+
+[node name="Beat_Right" type="Sprite2D" parent="HUD/BeatManager"]
+position = Vector2(1088, 704)
+texture = ExtResource("9_eb6dy")
 
 [node name="Conductor" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_tefeu")
@@ -305,4 +298,4 @@ position = Vector2(4608, 512)
 position = Vector2(5120, 512)
 
 [connection signal="beat_in_song" from="Conductor" to="." method="_on_conductor_beat_in_song"]
-[connection signal="beat_in_song" from="Conductor" to="HUD/Beat_Bar" method="_on_conductor_beat_in_song"]
+[connection signal="beat_in_song" from="Conductor" to="HUD/BeatManager" method="_on_conductor_beat_in_song"]

@@ -13,6 +13,12 @@ var score : int #variable to keep track of score
 var game_running : bool #boolean to see if game is running or not
 var beat_trigger : bool
 
+# Beat timing variables
+var last_beat_position : float = 0.0
+var time_since_last_beat : float = 0.0
+const BEAT_WINDOW : float = 0.15 # 
+
+
 func new_game():#called upon each new game start
 	#reset variables
 	score = 0 #set score back to 0 for the new game
@@ -29,54 +35,37 @@ func new_game():#called upon each new game start
 	$Ground.position = Vector2i(0, 0) #reset ground to starting position; center of gamewindow
 	#Ground.position might need adjustment if we change cam/gamewindow to viewport instead of default window.
 	
-
-	
 	#reset hud
 	$HUD.get_node("StartLabel").show()
 	$HUD.get_node("BonusScoreLabel").hide()
-
+	
+	
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	screen_size = get_window().size #get the window size, for ground scrolling
 	new_game()#init new game
-
-
+	
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if game_running:#if boolean is true from player input, run game.
 		$Crab.position.x = ($Conductor.song_position * START_SPEED) + CRAB_START_POS.x
 		$Camera2D.position.x = ($Conductor.song_position * START_SPEED) + CAM_START_POS.x
-		#speed = START_SPEED + score / SPEED_MODIFIER #startspeed + score, increases speed overtime
-		#if speed > MAX_SPEED: #prevent speed from rising indefinitely
-			#speed = MAX_SPEED
-		
-		
-		#Adding speed value to x-axis of camera and crab to move them along, per frame/delta
-		#$Crab.position.x += speed * delta #Had to add delta to speed, at 180fps speed would go insane.
-		#$Camera2D.position.x += speed * delta
 			
-		#Updating score
+		#Display updated score, its updated based on beat in _on
 		show_score()
-		#Adjust score to take into account destroyed obstacles and time spent running?
-			
-		#If camera position about to overtake ground, shift ground on x-axis at width of screen.
-		#This basically puts the ground node at the right end of the current ground, which just loops it
-		#if $Camera2D.position.x - $Ground.position.x > screen_size.x * 1.5:
-			#$Ground.position.x += screen_size.x
 	else:
 		if Input.is_action_pressed("ui_accept"):#if game not running wait for player input.
 				$Conductor.play()
 				game_running = true
 				$HUD.get_node("StartLabel").hide()
 				
-	
-		
+				
 func show_score():
 	#Get the scorelabel from the hud scene, 
 	$HUD.get_node("ScoreLabel").text = "SCORE: " + str(score)
 	
-
-
+	
 func _on_conductor_beat_in_song(position):
 	if Input.is_action_pressed("Jump"):
 			score +=10
