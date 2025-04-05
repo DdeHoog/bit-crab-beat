@@ -76,7 +76,7 @@ func check_high_score():
 	
 	
 func _on_conductor_beat_in_song(position):
-	if Input.is_action_pressed("Jump") && position!=0:#so you cant et bonus on starting game with spacebar
+	if Input.is_action_pressed("Jump") && position!=0:#so you cant get bonus on starting game with spacebar
 			score +=10
 			$HUD.get_node("BonusScoreLabel").show()
 			await get_tree().create_timer(1.0).timeout

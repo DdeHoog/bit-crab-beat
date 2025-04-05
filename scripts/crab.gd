@@ -1,8 +1,9 @@
 extends CharacterBody2D
 
-
 const GRAVITY = 4100
 const JUMP_VELOCITY = -1750
+@export var max_health := 3
+@onready var current_health := max_health
 
 
 #Called every frame 'delta' is elapsed tiem since the previous frame.
