@@ -18,12 +18,19 @@ var last_beat_position : float = 0.0
 var time_since_last_beat : float = 0.0
 const BEAT_WINDOW : float = 0.15 # 
 
-
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	screen_size = get_window().size #get the window size, for ground scrolling
+	$GameOver.get_node("RestartButton").pressed.connect(new_game)#when button pressed, new game trigger
+	new_game()#init new game
+	
+	
 func new_game():#called upon each new game start
 	#reset variables
 	score = 0 #set score back to 0 for the new game
 	show_score() #displays score even before game start
 	game_running = false #prevent game autostarting
+	get_tree().paused = false #unpauses game after gameover
 	beat_trigger = false
 	CRAB_START_POS = Vector2i((screen_size.x/4), 485) # Set crab start position at 1/4th of the screen x width
 	CAM_START_POS = get_window().size/2 #set camera deadcenter of the gamewindow size
@@ -39,12 +46,6 @@ func new_game():#called upon each new game start
 	$HUD.get_node("StartLabel").show()
 	$GameOver.hide()
 	$HUD.get_node("BonusScoreLabel").hide()
-	
-	
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	screen_size = get_window().size #get the window size, for ground scrolling
-	new_game()#init new game
 	
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -74,3 +75,8 @@ func _on_conductor_beat_in_song(position):
 			await get_tree().create_timer(1.0).timeout
 			$HUD.get_node("BonusScoreLabel").hide()
 	score += 1
+
+func game_over():#setup for gameover condition, need collision and player hp to use this
+	get_tree().paused = true
+	game_running = false
+	$GameOver.show()

@@ -140,6 +140,7 @@ position = Vector2(1088, 704)
 texture = ExtResource("9_eb6dy")
 
 [node name="GameOver" parent="." instance=ExtResource("8_ya4ey")]
+process_mode = 2
 
 [node name="Conductor" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_tefeu")
