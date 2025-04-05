@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://fyslyx0wbxu4"]
+[gd_scene load_steps=12 format=3 uid="uid://fyslyx0wbxu4"]
 
 [ext_resource type="PackedScene" uid="uid://4mytnumcpbra" path="res://scenes/bg.tscn" id="1_sugp2"]
 [ext_resource type="Script" uid="uid://rqnpqcj43e85" path="res://scripts/main.gd" id="1_tbgi4"]
@@ -8,10 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://bpunnmdbrunrw" path="res://scenes/hud.tscn" id="6_tefeu"]
 [ext_resource type="Script" uid="uid://mry38476ou0" path="res://scripts/conductor.gd" id="7_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://cibifkwfrce7j" path="res://scenes/placeholdername_barrel.tscn" id="8_tipki"]
-[ext_resource type="Texture2D" uid="uid://dkw6thaio0hfe" path="res://assets/img/obstacles/rock.png" id="9_choun"]
+[ext_resource type="PackedScene" uid="uid://1p3fkeu6qn7j" path="res://scenes/game_over.tscn" id="8_ya4ey"]
 [ext_resource type="Texture2D" uid="uid://pr8pstyekyse" path="res://assets/img/arrows/arrowkeys1.png" id="9_eb6dy"]
 [ext_resource type="Script" uid="uid://dx2lmbj4a4x64" path="res://scenes/beat_manager.gd" id="10_jkv2x"]
-[ext_resource type="Script" path="res://scripts/BaseMover.gd" id="10_ya4ey"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_tbgi4")
@@ -129,21 +128,6 @@ position = Vector2(576, 320)
 
 [node name="HUD" parent="." instance=ExtResource("6_tefeu")]
 
-[node name="BeatObject_Left" type="Sprite2D" parent="HUD"]
-visible = false
-position = Vector2(56, 695)
-rotation = 3.14159
-scale = Vector2(1, -1)
-texture = ExtResource("9_choun")
-script = ExtResource("10_ya4ey")
-
-[node name="BeatObject_Right" type="Sprite2D" parent="HUD"]
-visible = false
-position = Vector2(1093, 696)
-texture = ExtResource("9_choun")
-script = ExtResource("10_ya4ey")
-reverse = true
-
 [node name="BeatManager" type="Node" parent="HUD"]
 script = ExtResource("10_jkv2x")
 
@@ -154,6 +138,8 @@ texture = ExtResource("9_eb6dy")
 [node name="Beat_Right" type="Sprite2D" parent="HUD/BeatManager"]
 position = Vector2(1088, 704)
 texture = ExtResource("9_eb6dy")
+
+[node name="GameOver" parent="." instance=ExtResource("8_ya4ey")]
 
 [node name="Conductor" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_tefeu")
@@ -299,3 +285,4 @@ position = Vector2(5120, 512)
 
 [connection signal="beat_in_song" from="Conductor" to="." method="_on_conductor_beat_in_song"]
 [connection signal="beat_in_song" from="Conductor" to="HUD/BeatManager" method="_on_conductor_beat_in_song"]
+[connection signal="body_entered" from="Collidables/PLACEHOLDERNAME-BARREL11" to="." method="_on_placeholdernamebarrel_11_body_entered"]

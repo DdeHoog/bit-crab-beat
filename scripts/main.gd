@@ -30,13 +30,14 @@ func new_game():#called upon each new game start
 	
 	#To reset all the nodes back to the start
 	$Crab.position = CRAB_START_POS #reset crab to starting position
-	$Crab.velocity = Vector2i(0, 0) #Set speed to 0 in both x and y direction.
+	#$Crab.velocity = Vector2i(0, 0) #Set speed to 0 in both x and y direction.
 	$Camera2D.position = CAM_START_POS #reset cam back to start position
-	$Ground.position = Vector2i(0, 0) #reset ground to starting position; center of gamewindow
+	#$Ground.position = Vector2i(0, 0) #reset ground to starting position; center of gamewindow
 	#Ground.position might need adjustment if we change cam/gamewindow to viewport instead of default window.
 	
 	#reset hud
 	$HUD.get_node("StartLabel").show()
+	$GameOver.hide()
 	$HUD.get_node("BonusScoreLabel").hide()
 	
 	
@@ -55,7 +56,7 @@ func _process(delta):
 		#Display updated score, its updated based on beat in _on
 		show_score()
 	else:
-		if Input.is_action_pressed("ui_accept"):#if game not running wait for player input.
+		if Input.is_action_pressed("Start"):#if game not running wait for player input.
 				$Conductor.play()
 				game_running = true
 				$HUD.get_node("StartLabel").hide()
@@ -67,9 +68,9 @@ func show_score():
 	
 	
 func _on_conductor_beat_in_song(position):
-	if Input.is_action_pressed("Jump"):
+	if Input.is_action_pressed("Jump") && position!=0:#so you cant et bonus on starting game with spacebar
 			score +=10
 			$HUD.get_node("BonusScoreLabel").show()
-			await get_tree().create_timer(2.0).timeout
+			await get_tree().create_timer(1.0).timeout
 			$HUD.get_node("BonusScoreLabel").hide()
 	score += 1
