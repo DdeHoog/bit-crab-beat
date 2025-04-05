@@ -11,15 +11,82 @@
 [ext_resource type="PackedScene" uid="uid://cibifkwfrce7j" path="res://scenes/placeholdername_barrel.tscn" id="8_tipki"]
 [ext_resource type="Texture2D" uid="uid://dkw6thaio0hfe" path="res://assets/img/obstacles/rock.png" id="9_choun"]
 [ext_resource type="Script" uid="uid://shurmeggr3hh" path="res://scripts/beat_bar.gd" id="9_trceg"]
-[ext_resource type="Script" uid="uid://bl8rivse758ok" path="res://scripts/BaseMover.gd" id="10_ya4ey"]
+[ext_resource type="Script" path="res://scripts/BaseMover.gd" id="10_ya4ey"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_tbgi4")
 
-[node name="Bg" parent="." instance=ExtResource("1_sugp2")]
-visible = false
+[node name="Backgrounds" type="Node" parent="."]
 
-[node name="Bg2" parent="." instance=ExtResource("1_sugp2")]
+[node name="Bg" parent="Backgrounds" instance=ExtResource("1_sugp2")]
+
+[node name="Bg1" parent="Backgrounds/Bg" instance=ExtResource("1_sugp2")]
+
+[node name="Bg2" parent="Backgrounds" instance=ExtResource("1_sugp2")]
+offset = Vector2(2311.69, 0)
+transform = Transform2D(1, 0, 0, 1, 2311.69, 0)
+
+[node name="Bg2" parent="Backgrounds/Bg2" instance=ExtResource("1_sugp2")]
+
+[node name="Bg3" parent="Backgrounds" instance=ExtResource("1_sugp2")]
+offset = Vector2(4622.69, 0)
+transform = Transform2D(1, 0, 0, 1, 4622.69, 0)
+
+[node name="Bg3" parent="Backgrounds/Bg3" instance=ExtResource("1_sugp2")]
+
+[node name="Bg4" parent="Backgrounds" instance=ExtResource("1_sugp2")]
+offset = Vector2(6933.69, 0)
+transform = Transform2D(1, 0, 0, 1, 6933.69, 0)
+
+[node name="Bg4" parent="Backgrounds/Bg4" instance=ExtResource("1_sugp2")]
+
+[node name="Bg5" parent="Backgrounds" instance=ExtResource("1_sugp2")]
+offset = Vector2(9244.69, 0)
+transform = Transform2D(1, 0, 0, 1, 9244.69, 0)
+
+[node name="Bg5" parent="Backgrounds/Bg5" instance=ExtResource("1_sugp2")]
+
+[node name="Bg6" parent="Backgrounds" instance=ExtResource("1_sugp2")]
+offset = Vector2(11555.7, 0)
+transform = Transform2D(1, 0, 0, 1, 11555.7, 0)
+
+[node name="Bg6" parent="Backgrounds/Bg6" instance=ExtResource("1_sugp2")]
+
+[node name="Bg7" parent="Backgrounds" instance=ExtResource("1_sugp2")]
+offset = Vector2(13866.7, 0)
+transform = Transform2D(1, 0, 0, 1, 13866.7, 0)
+
+[node name="Bg7" parent="Backgrounds/Bg7" instance=ExtResource("1_sugp2")]
+
+[node name="Bg8" parent="Backgrounds" instance=ExtResource("1_sugp2")]
+offset = Vector2(16177.7, 0)
+transform = Transform2D(1, 0, 0, 1, 16177.7, 0)
+
+[node name="Bg8" parent="Backgrounds/Bg8" instance=ExtResource("1_sugp2")]
+
+[node name="Bg9" parent="Backgrounds" instance=ExtResource("1_sugp2")]
+offset = Vector2(18488.7, 0)
+transform = Transform2D(1, 0, 0, 1, 18488.7, 0)
+
+[node name="Bg9" parent="Backgrounds/Bg9" instance=ExtResource("1_sugp2")]
+
+[node name="Bg10" parent="Backgrounds" instance=ExtResource("1_sugp2")]
+offset = Vector2(18488.7, 0)
+transform = Transform2D(1, 0, 0, 1, 18488.7, 0)
+
+[node name="Bg10" parent="Backgrounds/Bg10" instance=ExtResource("1_sugp2")]
+
+[node name="Bg11" parent="Backgrounds" instance=ExtResource("1_sugp2")]
+offset = Vector2(20799.7, 0)
+transform = Transform2D(1, 0, 0, 1, 20799.7, 0)
+
+[node name="Bg11" parent="Backgrounds/Bg11" instance=ExtResource("1_sugp2")]
+
+[node name="Bg12" parent="Backgrounds" instance=ExtResource("1_sugp2")]
+offset = Vector2(23100.7, 0)
+transform = Transform2D(1, 0, 0, 1, 23100.7, 0)
+
+[node name="Bg12" parent="Backgrounds/Bg12" instance=ExtResource("1_sugp2")]
 
 [node name="Ground" parent="." instance=ExtResource("2_jyhfs")]
 metadata/_edit_group_ = true
@@ -55,7 +122,7 @@ position = Vector2(20736, 0)
 position = Vector2(23040, 0)
 
 [node name="Crab" parent="." instance=ExtResource("3_tbgi4")]
-position = Vector2(0, 448)
+position = Vector2(256, 448)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 320)
@@ -237,4 +304,5 @@ position = Vector2(4608, 512)
 [node name="PLACEHOLDERNAME-BARREL10" parent="Collidables" instance=ExtResource("8_tipki")]
 position = Vector2(5120, 512)
 
+[connection signal="beat_in_song" from="Conductor" to="." method="_on_conductor_beat_in_song"]
 [connection signal="beat_in_song" from="Conductor" to="HUD/Beat_Bar" method="_on_conductor_beat_in_song"]

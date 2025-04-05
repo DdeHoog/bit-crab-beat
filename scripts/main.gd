@@ -1,8 +1,8 @@
 extends Node
 
 #game variables 
-const CRAB_START_POS := Vector2i(0, 485) #hardcoded start position of playersprite
-const CAM_START_POS := Vector2i(250, 324) #middle of gamescreen - adjust later to match viewport!
+var CRAB_START_POS : Vector2i  
+var CAM_START_POS : Vector2i  
 const START_SPEED : float = 213.34 * 2 #Starting off speed 
 const MAX_SPEED : int = 1000 #Define a max speed, incase we increase speed overtime, added limit.
 const SPEED_MODIFIER := 50000 #Needed to divide speed to not go giga fast in 2 sec - temp fix, remove later?
@@ -19,6 +19,8 @@ func new_game():#called upon each new game start
 	show_score() #displays score even before game start
 	game_running = false #prevent game autostarting
 	beat_trigger = false
+	CRAB_START_POS = Vector2i((screen_size.x/4), 485) # Set crab start position at 1/4th of the screen x width
+	CAM_START_POS = get_window().size/2 #set camera deadcenter of the gamewindow size
 	
 	#To reset all the nodes back to the start
 	$Crab.position = CRAB_START_POS #reset crab to starting position
@@ -41,8 +43,8 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if game_running:#if boolean is true from player input, run game.
-		$Crab.position.x = $Conductor.song_position * START_SPEED
-		$Camera2D.position.x = $Conductor.song_position * START_SPEED
+		$Crab.position.x = ($Conductor.song_position * START_SPEED) + CRAB_START_POS.x
+		$Camera2D.position.x = ($Conductor.song_position * START_SPEED) + CAM_START_POS.x
 		#speed = START_SPEED + score / SPEED_MODIFIER #startspeed + score, increases speed overtime
 		#if speed > MAX_SPEED: #prevent speed from rising indefinitely
 			#speed = MAX_SPEED
@@ -53,8 +55,7 @@ func _process(delta):
 		#$Camera2D.position.x += speed * delta
 			
 		#Updating score
-		#score += speed #add speed as score counter, it goes fast on high fps -need to find another way for this
-		#show_score()
+		show_score()
 		#Adjust score to take into account destroyed obstacles and time spent running?
 			
 		#If camera position about to overtake ground, shift ground on x-axis at width of screen.
@@ -71,5 +72,9 @@ func _process(delta):
 		
 func show_score():
 	#Get the scorelabel from the hud scene, 
-	$HUD.get_node("ScoreLabel").text = "SCORE: " + str(score / SCORE_MODIFIER)
+	$HUD.get_node("ScoreLabel").text = "SCORE: " + str(score)
 	
+
+
+func _on_conductor_beat_in_song(position: Variant) -> void:
+	score += 1
