@@ -26,8 +26,8 @@ func reset_arrow_positions():
 	beat_right.position.x = screen_center_x + get_window().size.x / 2.2
 	is_moving = false
 	beats_moved = 0
-	beat_left.show()
-	beat_right.show()
+	#beat_left.show()
+	#beat_right.show()
 	
 	
 func move_arrows_one_beat():

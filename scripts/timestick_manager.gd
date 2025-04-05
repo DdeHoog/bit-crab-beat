@@ -28,7 +28,7 @@ func _ready() -> void:
 	screen_center_x = screen_width / 2
 
 	# Set spawn distance (e.g., spawn at screen edges)
-	spawn_distance_from_center = screen_width / 2
+	spawn_distance_from_center = screen_width / 1
 
 	# --- Calculate Speed based on Conductor's BPM ---
 	if conductor and conductor.sec_per_beat > 0 and travel_beats > 0:

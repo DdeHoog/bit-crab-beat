@@ -7,10 +7,10 @@
 [ext_resource type="AudioStream" uid="uid://cfe5gywm1hiou" path="res://assets/audio/B1T_First Level_D_04IV25@NAGA.ogg" id="5_tefeu"]
 [ext_resource type="PackedScene" uid="uid://bpunnmdbrunrw" path="res://scenes/hud.tscn" id="6_tefeu"]
 [ext_resource type="Script" uid="uid://mry38476ou0" path="res://scripts/conductor.gd" id="7_o6xl0"]
-[ext_resource type="Script" path="res://scripts/timestick_manager.gd" id="8_eb6dy"]
+[ext_resource type="Script" uid="uid://drjngwi3s8udi" path="res://scripts/timestick_manager.gd" id="8_eb6dy"]
 [ext_resource type="PackedScene" uid="uid://1p3fkeu6qn7j" path="res://scenes/game_over.tscn" id="8_ya4ey"]
 [ext_resource type="Texture2D" uid="uid://pr8pstyekyse" path="res://assets/img/arrows/arrowkeys1.png" id="9_eb6dy"]
-[ext_resource type="Script" path="res://scenes/beat_manager.gd" id="10_jkv2x"]
+[ext_resource type="Script" uid="uid://iwm1m5mko038" path="res://scenes/beat_manager.gd" id="10_jkv2x"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_tbgi4")
@@ -142,7 +142,7 @@ position = Vector2(1088, 704)
 texture = ExtResource("9_eb6dy")
 
 [node name="TimestickManager" type="Node2D" parent="HUD"]
-position = Vector2(576, 576)
+position = Vector2(283, 500)
 scale = Vector2(0.5, 0.5)
 script = ExtResource("8_eb6dy")
 left_timestick_texture = ExtResource("9_eb6dy")

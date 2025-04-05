@@ -1,7 +1,8 @@
 extends CharacterBody2D
 
-const GRAVITY = 4100
+const GRAVITY = 6500
 const JUMP_VELOCITY = -1750
+const DIVE_VELOCITY = 4000
 @export var max_health := 3
 @onready var current_health := max_health
 
@@ -22,6 +23,11 @@ func _physics_process(delta):
 			#	$RunCol.disabled = true
 			else:
 				$AnimatedSprite2D.play("Run")
+	elif !is_on_floor():
+			$RunCol.disabled = false
+			if Input.is_action_just_pressed("Down"):
+				velocity.y = DIVE_VELOCITY
+				$JumpSound.play()
 	else:
 		$AnimatedSprite2D.play("Jump")
 	#Moves the body based on velocity. If the body collides with another, 
