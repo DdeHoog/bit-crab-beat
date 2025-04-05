@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://fyslyx0wbxu4"]
+[gd_scene load_steps=12 format=3 uid="uid://fyslyx0wbxu4"]
 
 [ext_resource type="PackedScene" uid="uid://4mytnumcpbra" path="res://scenes/bg.tscn" id="1_sugp2"]
 [ext_resource type="Script" uid="uid://rqnpqcj43e85" path="res://scripts/main.gd" id="1_tbgi4"]
@@ -7,11 +7,10 @@
 [ext_resource type="AudioStream" uid="uid://cfe5gywm1hiou" path="res://assets/audio/B1T_First Level_D_04IV25@NAGA.ogg" id="5_tefeu"]
 [ext_resource type="PackedScene" uid="uid://bpunnmdbrunrw" path="res://scenes/hud.tscn" id="6_tefeu"]
 [ext_resource type="Script" uid="uid://mry38476ou0" path="res://scripts/conductor.gd" id="7_o6xl0"]
-[ext_resource type="Script" uid="uid://drjngwi3s8udi" path="res://scripts/timestick_manager.gd" id="8_eb6dy"]
+[ext_resource type="Script" path="res://scripts/timestick_manager.gd" id="8_eb6dy"]
 [ext_resource type="PackedScene" uid="uid://1p3fkeu6qn7j" path="res://scenes/game_over.tscn" id="8_ya4ey"]
 [ext_resource type="Texture2D" uid="uid://pr8pstyekyse" path="res://assets/img/arrows/arrowkeys1.png" id="9_eb6dy"]
-[ext_resource type="Script" uid="uid://dx2lmbj4a4x64" path="res://scripts/beat_manager.gd" id="10_jkv2x"]
-[ext_resource type="Texture2D" uid="uid://tt0g7orjagdt" path="res://assets/img/obstacles/objects1.png" id="11_ya4ey"]
+[ext_resource type="Script" path="res://scenes/beat_manager.gd" id="10_jkv2x"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_tbgi4")
@@ -158,18 +157,6 @@ volume_db = -22.847
 script = ExtResource("7_o6xl0")
 
 [node name="Collidables" type="Node" parent="."]
-
-[node name="Arrowkeys1" type="Sprite2D" parent="."]
-position = Vector2(832, 512)
-texture = ExtResource("9_eb6dy")
-
-[node name="Arrowkeys2" type="Sprite2D" parent="."]
-position = Vector2(1344, 512)
-texture = ExtResource("9_eb6dy")
-
-[node name="Objects1" type="Sprite2D" parent="."]
-position = Vector2(1024, 512)
-texture = ExtResource("11_ya4ey")
 
 [connection signal="beat_in_song" from="Conductor" to="." method="_on_conductor_beat_in_song"]
 [connection signal="beat_in_song" from="Conductor" to="HUD/BeatManager" method="_on_conductor_beat_in_song"]
