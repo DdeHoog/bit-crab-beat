@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://fyslyx0wbxu4"]
+[gd_scene load_steps=14 format=3 uid="uid://fyslyx0wbxu4"]
 
 [ext_resource type="PackedScene" uid="uid://4mytnumcpbra" path="res://scenes/bg.tscn" id="1_sugp2"]
 [ext_resource type="Script" uid="uid://rqnpqcj43e85" path="res://scripts/main.gd" id="1_tbgi4"]
@@ -11,6 +11,10 @@
 [ext_resource type="PackedScene" uid="uid://1p3fkeu6qn7j" path="res://scenes/game_over.tscn" id="8_ya4ey"]
 [ext_resource type="Texture2D" uid="uid://pr8pstyekyse" path="res://assets/img/arrows/arrowkeys1.png" id="9_eb6dy"]
 [ext_resource type="Script" uid="uid://iwm1m5mko038" path="res://scenes/beat_manager.gd" id="10_jkv2x"]
+[ext_resource type="Texture2D" uid="uid://be1i5out8pqgg" path="res://assets/img/arrows/arrowkeys6.png" id="12_eb6dy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_trceg"]
+size = Vector2(26.3333, 42.6667)
 
 [node name="Main" type="Node"]
 script = ExtResource("1_tbgi4")
@@ -157,6 +161,50 @@ volume_db = -22.847
 script = ExtResource("7_o6xl0")
 
 [node name="Collidables" type="Node" parent="."]
+
+[node name="Arrow Up" type="Area2D" parent="Collidables"]
+position = Vector2(-256, 0)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Collidables/Arrow Up"]
+texture_filter = 1
+position = Vector2(1536, 448)
+scale = Vector2(3, 3)
+texture = ExtResource("9_eb6dy")
+
+[node name="Good Hitbox" type="CollisionShape2D" parent="Collidables/Arrow Up"]
+texture_filter = 1
+position = Vector2(1511.5, 448)
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_trceg")
+
+[node name="Perfect Hitbox" type="CollisionShape2D" parent="Collidables/Arrow Up"]
+texture_filter = 1
+position = Vector2(1536, 448)
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_trceg")
+
+[node name="Arrow Down" type="Area2D" parent="Collidables"]
+position = Vector2(1, -128)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Collidables/Arrow Down"]
+texture_filter = 1
+position = Vector2(1536, 448)
+scale = Vector2(3, 3)
+texture = ExtResource("12_eb6dy")
+
+[node name="Good Hitbox" type="CollisionShape2D" parent="Collidables/Arrow Down"]
+texture_filter = 1
+position = Vector2(1511.5, 448)
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_trceg")
+
+[node name="Perfect Hitbox" type="CollisionShape2D" parent="Collidables/Arrow Down"]
+texture_filter = 1
+position = Vector2(1536, 448)
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_trceg")
 
 [connection signal="beat_in_song" from="Conductor" to="." method="_on_conductor_beat_in_song"]
 [connection signal="beat_in_song" from="Conductor" to="HUD/BeatManager" method="_on_conductor_beat_in_song"]
