@@ -43,3 +43,13 @@ theme_override_font_sizes/font_size = 40
 text = "HIGHSCORE"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="BonusScoreLabel" type="Label" parent="."]
+offset_top = 64.0
+offset_right = 167.0
+offset_bottom = 115.0
+theme_override_fonts/font = ExtResource("1_ahhtf")
+theme_override_font_sizes/font_size = 40
+text = "BONUS!"
+horizontal_alignment = 1
+vertical_alignment = 1

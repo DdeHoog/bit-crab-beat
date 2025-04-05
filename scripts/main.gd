@@ -33,6 +33,7 @@ func new_game():#called upon each new game start
 	
 	#reset hud
 	$HUD.get_node("StartLabel").show()
+	$HUD.get_node("BonusScoreLabel").hide()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -76,5 +77,10 @@ func show_score():
 	
 
 
-func _on_conductor_beat_in_song(position: Variant) -> void:
+func _on_conductor_beat_in_song(position):
+	if Input.is_action_pressed("Jump"):
+			score +=10
+			$HUD.get_node("BonusScoreLabel").show()
+			await get_tree().create_timer(2.0).timeout
+			$HUD.get_node("BonusScoreLabel").hide()
 	score += 1
