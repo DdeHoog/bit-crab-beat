@@ -1,12 +1,13 @@
 extends Node
 
 #game variables 
-var CRAB_START_POS : Vector2i  
-var CAM_START_POS : Vector2i  
 const START_SPEED : float = 213.34 * 2 #Starting off speed 
 const MAX_SPEED : int = 1000 #Define a max speed, incase we increase speed overtime, added limit.
 const SPEED_MODIFIER := 50000 #Needed to divide speed to not go giga fast in 2 sec - temp fix, remove later?
 const SCORE_MODIFIER := 1000 #Needed to divide the score to keep numbers reasonable - temp fix, remove later.
+var CRAB_START_POS : Vector2i  
+var CAM_START_POS : Vector2i  
+var high_score : int
 var speed : int #allows for playerspeed to vary based on lvl/score/time
 var screen_size : Vector2i #prep variable for screensize
 var score : int #variable to keep track of score
@@ -68,6 +69,12 @@ func show_score():
 	$HUD.get_node("ScoreLabel").text = "SCORE: " + str(score)
 	
 	
+func check_high_score():
+	if score > high_score:
+		high_score == score
+		$HUD.get_node("HighscoreLabel").text = "SCORE: " + str(high_score)
+	
+	
 func _on_conductor_beat_in_song(position):
 	if Input.is_action_pressed("Jump") && position!=0:#so you cant et bonus on starting game with spacebar
 			score +=10
@@ -77,6 +84,7 @@ func _on_conductor_beat_in_song(position):
 	score += 1
 
 func game_over():#setup for gameover condition, need collision and player hp to use this
+	check_high_score()#puts new highscore on the screen
 	get_tree().paused = true
 	game_running = false
 	$GameOver.show()
