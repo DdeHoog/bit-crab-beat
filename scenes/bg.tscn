@@ -30,15 +30,16 @@ texture = ExtResource("3_r6ch1")
 centered = false
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
-visible = false
 motion_scale = Vector2(0.6, 0.75)
 motion_mirroring = Vector2(1152, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer3"]
+visible = false
 texture = ExtResource("3_r6ch1")
 centered = false
 
 [node name="ParallaxLayer4" type="ParallaxLayer" parent="."]
+visible = false
 motion_scale = Vector2(0.8, 0.889)
 motion_mirroring = Vector2(1152, 0)
 

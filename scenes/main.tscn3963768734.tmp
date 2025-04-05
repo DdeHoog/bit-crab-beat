@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://fyslyx0wbxu4"]
+[gd_scene load_steps=14 format=3 uid="uid://fyslyx0wbxu4"]
 
 [ext_resource type="PackedScene" uid="uid://4mytnumcpbra" path="res://scenes/bg.tscn" id="1_sugp2"]
 [ext_resource type="Script" uid="uid://rqnpqcj43e85" path="res://scripts/main.gd" id="1_tbgi4"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://drjngwi3s8udi" path="res://scripts/timestick_manager.gd" id="8_eb6dy"]
 [ext_resource type="PackedScene" uid="uid://1p3fkeu6qn7j" path="res://scenes/game_over.tscn" id="8_ya4ey"]
 [ext_resource type="Texture2D" uid="uid://pr8pstyekyse" path="res://assets/img/arrows/arrowkeys1.png" id="9_eb6dy"]
+[ext_resource type="Texture2D" uid="uid://cwmhuyvw7pomc" path="res://assets/img/arrows/arrowkeys2.png" id="9_trceg"]
 [ext_resource type="Script" uid="uid://dx2lmbj4a4x64" path="res://scripts/beat_manager.gd" id="10_jkv2x"]
 [ext_resource type="Texture2D" uid="uid://tt0g7orjagdt" path="res://assets/img/obstacles/objects1.png" id="11_ya4ey"]
 
@@ -143,11 +144,9 @@ position = Vector2(1088, 704)
 texture = ExtResource("9_eb6dy")
 
 [node name="TimestickManager" type="Node2D" parent="HUD"]
-position = Vector2(576, 576)
-scale = Vector2(0.5, 0.5)
 script = ExtResource("8_eb6dy")
 left_timestick_texture = ExtResource("9_eb6dy")
-right_timestick_texture = ExtResource("9_eb6dy")
+right_timestick_texture = ExtResource("9_trceg")
 
 [node name="GameOver" parent="." instance=ExtResource("8_ya4ey")]
 process_mode = 2
@@ -173,4 +172,3 @@ texture = ExtResource("11_ya4ey")
 
 [connection signal="beat_in_song" from="Conductor" to="." method="_on_conductor_beat_in_song"]
 [connection signal="beat_in_song" from="Conductor" to="HUD/BeatManager" method="_on_conductor_beat_in_song"]
-[connection signal="beat_in_song" from="Conductor" to="HUD/TimestickManager" method="_on_conductor_beat_in_song"]

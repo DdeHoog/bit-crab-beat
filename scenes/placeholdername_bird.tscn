@@ -1,21 +1,15 @@
-[gd_scene load_steps=9 format=3 uid="uid://c8ochpo4ybhrm"]
-
-[ext_resource type="Texture2D" uid="uid://dyasm1fruq87r" path="res://assets/img/obstacles/Bird.png" id="1_fb36a"]
+[gd_scene load_steps=8 format=3 uid="uid://c8ochpo4ybhrm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tcppk"]
-atlas = ExtResource("1_fb36a")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2uem2"]
-atlas = ExtResource("1_fb36a")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kg4vm"]
-atlas = ExtResource("1_fb36a")
 region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mk6sp"]
-atlas = ExtResource("1_fb36a")
 region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_83nrm"]
