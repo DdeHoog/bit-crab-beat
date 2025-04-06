@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://be7vxry3mdb80"]
+
+[ext_resource type="Texture2D" uid="uid://be1i5out8pqgg" path="res://assets/img/arrows/arrowkeys6.png" id="1_gtji4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_trceg"]
+size = Vector2(26.3333, 42.6667)
+
+[node name="Arrow Down Good" type="Area2D"]
+metadata/_edit_group_ = true
+
+[node name="Good Hitbox" type="CollisionShape2D" parent="."]
+texture_filter = 1
+position = Vector2(1511.5, 448)
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_trceg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1536, 448)
+scale = Vector2(3, 3)
+texture = ExtResource("1_gtji4")

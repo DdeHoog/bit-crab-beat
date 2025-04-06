@@ -15,6 +15,8 @@ var game_running : bool #boolean to see if game is running or not
 var beat_trigger : bool
 var inside_good_hitbox := false #Vars to check which hitbox the player box is inside of
 var inside_perfect_hitbox := false
+var can_score_good := true
+var can_score_perfect := true
 
 # Beat timing variables
 var last_beat_position : float = 0.0
@@ -32,6 +34,8 @@ func new_game():#called upon each new game start
 	#reset variables
 	score = 0 #set score back to 0 for the new game
 	show_score() #displays score even before game start
+	can_score_good = true # Reset flag
+	can_score_perfect = true # Reset flag
 	game_running = false #prevent game autostarting
 	get_tree().paused = false #unpauses game after gameover
 	beat_trigger = false
@@ -49,6 +53,8 @@ func new_game():#called upon each new game start
 	$HUD.get_node("StartLabel").show()
 	$GameOver.hide()
 	$HUD.get_node("BonusScoreLabel").hide()
+	$HUD.get_node("GoodHitboxLabel").hide()
+	$HUD.get_node("PerfectHitboxLabel").hide()
 	
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -66,15 +72,31 @@ func _process(delta):
 				$HUD.get_node("StartLabel").hide()
 				
 				
-	#Check to see in which hitbox we are and print that out
-	if inside_good_hitbox && !inside_perfect_hitbox && Input.is_action_pressed("Jump"):
-			print("Good hitbox")
-	elif inside_good_hitbox && !inside_perfect_hitbox && Input.is_action_pressed("Down"):
-			print("Good hitbox")
-	elif inside_perfect_hitbox && Input.is_action_pressed("Jump"):
-			print("Perfect hitbox")
-	elif inside_perfect_hitbox && Input.is_action_pressed("Down"):
-			print("Perfect hitbox")
+	#Check to see in which hitbox we are and add score accordingly
+	if inside_good_hitbox && !inside_perfect_hitbox: 
+			if Input.is_action_pressed("Jump") && can_score_good:
+				can_score_good = false #prevents multiscoring on frames
+				can_score_perfect = false #prevents multiscoring on frames
+				temporary_label($HUD.get_node("GoodHitboxLabel"), 1.5)
+				good_score()
+	elif inside_good_hitbox && !inside_perfect_hitbox:
+			if Input.is_action_pressed("Down") && can_score_good:
+				can_score_good = false #prevents multiscoring on frames
+				can_score_perfect = false #prevents multiscoring on frames
+				temporary_label($HUD.get_node("GoodHitboxLabel"), 1.5)
+				good_score()
+	elif inside_perfect_hitbox:
+			if Input.is_action_pressed("Jump") && can_score_perfect:
+				can_score_perfect = false #prevents multiscoring on frames
+				can_score_good = false #prevents multiscoring on frames
+				temporary_label($HUD.get_node("PerfectHitboxLabel"), 1.5)
+				perfect_score()
+	elif inside_perfect_hitbox:
+		if Input.is_action_pressed("Down") && can_score_perfect:
+				can_score_perfect = false #prevents multiscoring on frames
+				can_score_good = false #prevents multiscoring on frames
+				temporary_label($HUD.get_node("PerfectHitboxLabel"), 1.5)
+				perfect_score()
 			
 			
 func show_score():
@@ -87,6 +109,10 @@ func check_high_score():
 		high_score == score
 		$HUD.get_node("HighscoreLabel").text = "SCORE: " + str(high_score)
 	
+func temporary_label(label_node, duration: float):
+	label_node.show()
+	var timer = get_tree().create_timer(duration)
+	timer.timeout.connect(label_node.hide.bind())
 	
 func _on_conductor_beat_in_song(position):
 	if Input.is_action_pressed("Jump") || Input.is_action_pressed("Down") && position!=0:#so you cant get bonus on starting game with spacebar
@@ -102,20 +128,38 @@ func game_over():#setup for gameover condition, need collision and player hp to 
 	game_running = false
 	$GameOver.show()
 	
+	
+func good_score():
+	score += 30
+	print_debug(score)
+	
+func perfect_score():
+	score += 50
+	print_debug(score)
+	
 #Functions to check inside which hitbox we are, the hitboxes are split over 2 area shapes.
 func _on_arrow_up_good_body_entered(body):
 	inside_good_hitbox = true
 func _on_arrow_up_good_body_exited(body):
 	inside_good_hitbox = false
+	can_score_good = true
 func _on_arrow_up_perfect_body_entered(body):
 	inside_perfect_hitbox = true
 func _on_arrow_up_perfect_body_exited(body):
 	inside_perfect_hitbox = false
+	can_score_perfect = true
 func _on_arrow_down_good_body_entered(body):
 	inside_good_hitbox = true
 func _on_arrow_down_good_body_exited(body):
 	inside_good_hitbox = false
+	can_score_good = true
 func _on_arrow_down_perfect_body_entered(body):
 	inside_perfect_hitbox = true
 func _on_arrow_down_perfect_body_exited(body):
 	inside_perfect_hitbox = false
+	can_score_perfect = true
+	
+
+
+func _on_arrow_up_group_1__duplicate_this_for_more_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.
