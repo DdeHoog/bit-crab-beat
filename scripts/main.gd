@@ -13,6 +13,8 @@ var screen_size : Vector2i #prep variable for screensize
 var score : int #variable to keep track of score
 var game_running : bool #boolean to see if game is running or not
 var beat_trigger : bool
+var inside_good_hitbox := false
+var inside_perfect_hitbox := false
 
 # Beat timing variables
 var last_beat_position : float = 0.0
@@ -64,6 +66,16 @@ func _process(delta):
 				$HUD.get_node("StartLabel").hide()
 				
 				
+	if inside_good_hitbox && !inside_perfect_hitbox && Input.is_action_pressed("Jump"):
+			print("Good hitbox")
+	elif inside_good_hitbox && !inside_perfect_hitbox && Input.is_action_pressed("Down"):
+			print("Good hitbox")
+	elif inside_perfect_hitbox && Input.is_action_pressed("Jump"):
+			print("Perfect hitbox")
+	elif inside_perfect_hitbox && Input.is_action_pressed("Down"):
+			print("Perfect hitbox")
+			
+			
 func show_score():
 	#Get the scorelabel from the hud scene, 
 	$HUD.get_node("ScoreLabel").text = "SCORE: " + str(score)
@@ -88,3 +100,13 @@ func game_over():#setup for gameover condition, need collision and player hp to 
 	get_tree().paused = true
 	game_running = false
 	$GameOver.show()
+	
+	
+func _on_arrow_up_good_body_entered(body):
+	inside_good_hitbox = true
+func _on_arrow_up_good_body_exited(body):
+	inside_good_hitbox = false
+func _on_arrow_up_perfect_body_entered(body):
+	inside_perfect_hitbox = true
+func _on_arrow_up_perfect_body_exited(body):
+	inside_perfect_hitbox = false

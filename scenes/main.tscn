@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://fyslyx0wbxu4"]
+[gd_scene load_steps=16 format=3 uid="uid://fyslyx0wbxu4"]
 
 [ext_resource type="PackedScene" uid="uid://4mytnumcpbra" path="res://scenes/bg.tscn" id="1_sugp2"]
 [ext_resource type="Script" uid="uid://rqnpqcj43e85" path="res://scripts/main.gd" id="1_tbgi4"]
@@ -11,7 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://1p3fkeu6qn7j" path="res://scenes/game_over.tscn" id="8_ya4ey"]
 [ext_resource type="Texture2D" uid="uid://pr8pstyekyse" path="res://assets/img/arrows/arrowkeys1.png" id="9_eb6dy"]
 [ext_resource type="Script" uid="uid://iwm1m5mko038" path="res://scenes/beat_manager.gd" id="10_jkv2x"]
+[ext_resource type="PackedScene" uid="uid://dgfj7hkd58lt3" path="res://scenes/arrow_up_good.tscn" id="12_a8y0u"]
 [ext_resource type="Texture2D" uid="uid://be1i5out8pqgg" path="res://assets/img/arrows/arrowkeys6.png" id="12_eb6dy"]
+[ext_resource type="PackedScene" uid="uid://yn5c381kwvov" path="res://scenes/arrow_up_perfect.tscn" id="13_jkv2x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_trceg"]
 size = Vector2(26.3333, 42.6667)
@@ -162,27 +164,13 @@ script = ExtResource("7_o6xl0")
 
 [node name="Collidables" type="Node" parent="."]
 
-[node name="Arrow Up" type="Area2D" parent="Collidables"]
-position = Vector2(-256, 0)
+[node name="Arrow Up Group 1" type="Area2D" parent="Collidables"]
 metadata/_edit_group_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="Collidables/Arrow Up"]
-texture_filter = 1
-position = Vector2(1536, 448)
-scale = Vector2(3, 3)
-texture = ExtResource("9_eb6dy")
+[node name="Arrow Up Good" parent="Collidables/Arrow Up Group 1" instance=ExtResource("12_a8y0u")]
+position = Vector2(-256, 0)
 
-[node name="Good Hitbox" type="CollisionShape2D" parent="Collidables/Arrow Up"]
-texture_filter = 1
-position = Vector2(1511.5, 448)
-scale = Vector2(3, 3)
-shape = SubResource("RectangleShape2D_trceg")
-
-[node name="Perfect Hitbox" type="CollisionShape2D" parent="Collidables/Arrow Up"]
-texture_filter = 1
-position = Vector2(1536, 448)
-scale = Vector2(3, 3)
-shape = SubResource("RectangleShape2D_trceg")
+[node name="Arrow Up Perfect" parent="Collidables/Arrow Up Group 1" instance=ExtResource("13_jkv2x")]
 
 [node name="Arrow Down" type="Area2D" parent="Collidables"]
 position = Vector2(1, -128)
@@ -209,3 +197,7 @@ shape = SubResource("RectangleShape2D_trceg")
 [connection signal="beat_in_song" from="Conductor" to="." method="_on_conductor_beat_in_song"]
 [connection signal="beat_in_song" from="Conductor" to="HUD/BeatManager" method="_on_conductor_beat_in_song"]
 [connection signal="beat_in_song" from="Conductor" to="HUD/TimestickManager" method="_on_conductor_beat_in_song"]
+[connection signal="body_entered" from="Collidables/Arrow Up Group 1/Arrow Up Good" to="." method="_on_arrow_up_good_body_entered"]
+[connection signal="body_exited" from="Collidables/Arrow Up Group 1/Arrow Up Good" to="." method="_on_arrow_up_good_body_exited"]
+[connection signal="body_entered" from="Collidables/Arrow Up Group 1/Arrow Up Perfect" to="." method="_on_arrow_up_perfect_body_entered"]
+[connection signal="body_exited" from="Collidables/Arrow Up Group 1/Arrow Up Perfect" to="." method="_on_arrow_up_perfect_body_exited"]
