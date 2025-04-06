@@ -68,13 +68,11 @@ func _process(delta):
 				
 	#Check to see in which hitbox we are and print that out
 	if inside_good_hitbox && !inside_perfect_hitbox && Input.is_action_pressed("Jump"):
-			pass
-			#print("Good hitbox")
+			print("Good hitbox")
 	elif inside_good_hitbox && !inside_perfect_hitbox && Input.is_action_pressed("Down"):
 			print("Good hitbox")
 	elif inside_perfect_hitbox && Input.is_action_pressed("Jump"):
-			pass
-			#print("Perfect hitbox")
+			print("Perfect hitbox")
 	elif inside_perfect_hitbox && Input.is_action_pressed("Down"):
 			print("Perfect hitbox")
 			
