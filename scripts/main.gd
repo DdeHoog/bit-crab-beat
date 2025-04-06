@@ -13,7 +13,7 @@ var screen_size : Vector2i #prep variable for screensize
 var score : int #variable to keep track of score
 var game_running : bool #boolean to see if game is running or not
 var beat_trigger : bool
-var inside_good_hitbox := false
+var inside_good_hitbox := false #Vars to check which hitbox the player box is inside of
 var inside_perfect_hitbox := false
 
 # Beat timing variables
@@ -66,12 +66,15 @@ func _process(delta):
 				$HUD.get_node("StartLabel").hide()
 				
 				
+	#Check to see in which hitbox we are and print that out
 	if inside_good_hitbox && !inside_perfect_hitbox && Input.is_action_pressed("Jump"):
-			print("Good hitbox")
+			pass
+			#print("Good hitbox")
 	elif inside_good_hitbox && !inside_perfect_hitbox && Input.is_action_pressed("Down"):
 			print("Good hitbox")
 	elif inside_perfect_hitbox && Input.is_action_pressed("Jump"):
-			print("Perfect hitbox")
+			pass
+			#print("Perfect hitbox")
 	elif inside_perfect_hitbox && Input.is_action_pressed("Down"):
 			print("Perfect hitbox")
 			
@@ -101,7 +104,7 @@ func game_over():#setup for gameover condition, need collision and player hp to 
 	game_running = false
 	$GameOver.show()
 	
-	
+#Functions to check inside which hitbox we are, the hitboxes are split over 2 area shapes.
 func _on_arrow_up_good_body_entered(body):
 	inside_good_hitbox = true
 func _on_arrow_up_good_body_exited(body):
@@ -109,4 +112,12 @@ func _on_arrow_up_good_body_exited(body):
 func _on_arrow_up_perfect_body_entered(body):
 	inside_perfect_hitbox = true
 func _on_arrow_up_perfect_body_exited(body):
+	inside_perfect_hitbox = false
+func _on_arrow_down_good_body_entered(body):
+	inside_good_hitbox = true
+func _on_arrow_down_good_body_exited(body):
+	inside_good_hitbox = false
+func _on_arrow_down_perfect_body_entered(body):
+	inside_perfect_hitbox = true
+func _on_arrow_down_perfect_body_exited(body):
 	inside_perfect_hitbox = false
