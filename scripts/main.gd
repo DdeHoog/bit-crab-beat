@@ -18,11 +18,6 @@ var inside_perfect_hitbox := false
 var can_score_good := true
 var can_score_perfect := true
 
-# Beat timing variables
-var last_beat_position : float = 0.0
-var time_since_last_beat : float = 0.0
-const BEAT_WINDOW : float = 0.15 # 
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	screen_size = get_window().size #get the window size, for ground scrolling
@@ -44,10 +39,7 @@ func new_game():#called upon each new game start
 	
 	#To reset all the nodes back to the start
 	$Crab.position = CRAB_START_POS #reset crab to starting position
-	#$Crab.velocity = Vector2i(0, 0) #Set speed to 0 in both x and y direction.
 	$Camera2D.position = CAM_START_POS #reset cam back to start position
-	#$Ground.position = Vector2i(0, 0) #reset ground to starting position; center of gamewindow
-	#Ground.position might need adjustment if we change cam/gamewindow to viewport instead of default window.
 	
 	#reset hud
 	$HUD.get_node("StartLabel").show()
@@ -61,17 +53,15 @@ func new_game():#called upon each new game start
 func _process(delta):
 	if game_running:#if boolean is true from player input, run game.
 		$Crab.position.x = ($Conductor.song_position * START_SPEED) + CRAB_START_POS.x
-		$Camera2D.position.x = ($Conductor.song_position * START_SPEED) + CAM_START_POS.x
-			
+		$Camera2D.position.x = ($Conductor.song_position * START_SPEED) + CAM_START_POS.x	
 		#Display updated score, its updated based on beat in _on
 		show_score()
 	else:
 		if Input.is_action_pressed("Start"):#if game not running wait for player input.
 				$Conductor.play()
 				game_running = true
-				$HUD.get_node("StartLabel").hide()
-				
-				
+				$HUD.get_node("StartLabel").hide()	
+	
 	#Check to see in which hitbox we are and add score accordingly
 	if inside_good_hitbox && !inside_perfect_hitbox: 
 			if Input.is_action_pressed("Jump") && can_score_good:
@@ -97,8 +87,7 @@ func _process(delta):
 				can_score_good = false #prevents multiscoring on frames
 				temporary_label($HUD.get_node("PerfectHitboxLabel"), 1.5)
 				perfect_score()
-			
-			
+	
 func show_score():
 	#Get the scorelabel from the hud scene, 
 	$HUD.get_node("ScoreLabel").text = "SCORE: " + str(score)
@@ -117,9 +106,7 @@ func temporary_label(label_node, duration: float):
 func _on_conductor_beat_in_song(position):
 	if Input.is_action_pressed("Jump") || Input.is_action_pressed("Down") && position!=0:#so you cant get bonus on starting game with spacebar
 			score +=10
-			$HUD.get_node("BonusScoreLabel").show()
-			await get_tree().create_timer(1.0).timeout
-			$HUD.get_node("BonusScoreLabel").hide()
+			temporary_label($HUD.get_node("BonusScoreLabel"), 1.5)
 	score += 1
 
 func game_over():#setup for gameover condition, need collision and player hp to use this
@@ -128,14 +115,13 @@ func game_over():#setup for gameover condition, need collision and player hp to 
 	game_running = false
 	$GameOver.show()
 	
-	
 func good_score():
 	score += 30
-	print_debug(score)
+	#print_debug(score)
 	
 func perfect_score():
 	score += 50
-	print_debug(score)
+	#print_debug(score)
 	
 #Functions to check inside which hitbox we are, the hitboxes are split over 2 area shapes.
 func _on_arrow_up_good_body_entered(body):
@@ -158,8 +144,3 @@ func _on_arrow_down_perfect_body_entered(body):
 func _on_arrow_down_perfect_body_exited(body):
 	inside_perfect_hitbox = false
 	can_score_perfect = true
-	
-
-
-func _on_arrow_up_group_1__duplicate_this_for_more_body_entered(body: Node2D) -> void:
-	pass # Replace with function body.

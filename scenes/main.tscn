@@ -183,6 +183,7 @@ metadata/_edit_group_ = true
 [connection signal="beat_in_song" from="Conductor" to="." method="_on_conductor_beat_in_song"]
 [connection signal="beat_in_song" from="Conductor" to="HUD/BeatManager" method="_on_conductor_beat_in_song"]
 [connection signal="beat_in_song" from="Conductor" to="HUD/TimestickManager" method="_on_conductor_beat_in_song"]
+[connection signal="body_entered" from="Arrows/Arrow Up Group 1 - duplicate this for more" to="." method="_on_arrow_up_group_1__duplicate_this_for_more_body_entered"]
 [connection signal="body_entered" from="Arrows/Arrow Up Group 1 - duplicate this for more/Arrow Up Good" to="." method="_on_arrow_up_good_body_entered"]
 [connection signal="body_exited" from="Arrows/Arrow Up Group 1 - duplicate this for more/Arrow Up Good" to="." method="_on_arrow_up_good_body_exited"]
 [connection signal="body_entered" from="Arrows/Arrow Up Group 1 - duplicate this for more/Arrow Up Perfect" to="." method="_on_arrow_up_perfect_body_entered"]
