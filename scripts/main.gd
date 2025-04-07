@@ -99,7 +99,7 @@ func _process(delta):
 	else:
 		if Input.is_action_pressed("Start"):#if game not running wait for player input.
 				$HUD/BeatIndicator.show()
-				$Conductor.play()
+				$Conductor.play_from_beat(95)
 				#$HUD.get_node("BeatIndicator").play("Beat")
 				#$HUD.get_node("BeatIndicator").SetAnimationSpeed("Beat", 1.76)
 				game_running = true
