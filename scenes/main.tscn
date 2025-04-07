@@ -6,10 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://dq5kitkbpxa6u" path="res://scenes/crab.tscn" id="3_tbgi4"]
 [ext_resource type="AudioStream" uid="uid://cfe5gywm1hiou" path="res://assets/audio/B1T_First Level_D_04IV25@NAGA.ogg" id="5_tefeu"]
 [ext_resource type="PackedScene" uid="uid://bpunnmdbrunrw" path="res://scenes/hud.tscn" id="6_tefeu"]
+[ext_resource type="Texture2D" uid="uid://miqjmju22v03" path="res://assets/img/spacebar beat/white dot.png" id="7_jbj1t"]
 [ext_resource type="Script" uid="uid://mry38476ou0" path="res://scripts/conductor.gd" id="7_o6xl0"]
 [ext_resource type="Script" uid="uid://drjngwi3s8udi" path="res://scripts/timestick_manager.gd" id="8_eb6dy"]
 [ext_resource type="PackedScene" uid="uid://1p3fkeu6qn7j" path="res://scenes/game_over.tscn" id="8_ya4ey"]
-[ext_resource type="Texture2D" uid="uid://pr8pstyekyse" path="res://assets/img/arrows/arrowkeys1.png" id="9_eb6dy"]
 [ext_resource type="Script" uid="uid://iwm1m5mko038" path="res://scenes/beat_manager.gd" id="10_jkv2x"]
 [ext_resource type="PackedScene" uid="uid://dgfj7hkd58lt3" path="res://scenes/arrow_up_good.tscn" id="12_a8y0u"]
 [ext_resource type="PackedScene" uid="uid://yn5c381kwvov" path="res://scenes/arrow_up_perfect.tscn" id="13_jkv2x"]
@@ -138,19 +138,19 @@ script = ExtResource("10_jkv2x")
 [node name="Beat_Left" type="Sprite2D" parent="HUD/BeatManager"]
 visible = false
 position = Vector2(64, 704)
-texture = ExtResource("9_eb6dy")
+texture = ExtResource("7_jbj1t")
 
 [node name="Beat_Right" type="Sprite2D" parent="HUD/BeatManager"]
 visible = false
 position = Vector2(1088, 704)
-texture = ExtResource("9_eb6dy")
+texture = ExtResource("7_jbj1t")
 
 [node name="TimestickManager" type="Node2D" parent="HUD"]
 position = Vector2(283, 500)
 scale = Vector2(0.5, 0.5)
 script = ExtResource("8_eb6dy")
-left_timestick_texture = ExtResource("9_eb6dy")
-right_timestick_texture = ExtResource("9_eb6dy")
+left_timestick_texture = ExtResource("7_jbj1t")
+right_timestick_texture = ExtResource("7_jbj1t")
 
 [node name="GameOver" parent="." instance=ExtResource("8_ya4ey")]
 process_mode = 2
