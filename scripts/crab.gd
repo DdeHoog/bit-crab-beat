@@ -4,7 +4,7 @@ const GRAVITY = 6500
 const JUMP_VELOCITY = -1750
 const DIVE_VELOCITY = 4000
 const MAX_JUMP_VELOCITY = -JUMP_VELOCITY # Clamp the max jump velocity
-const HOVER_DURATION := 1.0 #time in sec to hover
+const HOVER_DURATION := 0.6 #time in sec to hover
 const APEX_THRESHOLD := 50.0 #Velocity near-zero threshold
 var hovering := false
 var hover_timer : float
@@ -29,6 +29,7 @@ func _physics_process(delta):
 			$RunCol.disabled = false
 			if Input.is_action_just_pressed("Jump"):
 				velocity.y = JUMP_VELOCITY
+				$AnimatedSprite2D.play("Jump")
 				$JumpSound.play()
 			else:
 				$AnimatedSprite2D.play("Run")
@@ -38,12 +39,7 @@ func _physics_process(delta):
 			if Input.is_action_just_pressed("Down"):
 				velocity.y = DIVE_VELOCITY
 				$JumpSound.play()
-			
-			#To prevent gigalaunching off screen	
-			#Clamp vertical velocity while holding Jump to prevent bouncing higher
-			if Input.is_action_pressed("Jump"):
-				if velocity.y > -MAX_JUMP_VELOCITY:
-					velocity.y = max(velocity.y, -MAX_JUMP_VELOCITY)
+				end_hover()
 					
 	else:
 		$AnimatedSprite2D.play("Jump")

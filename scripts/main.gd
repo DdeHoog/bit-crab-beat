@@ -90,25 +90,25 @@ func _process(delta):
 			if Input.is_action_pressed("Jump") && can_score_good:
 				can_score_good = false #prevents multiscoring on frames
 				can_score_perfect = false #prevents multiscoring on frames
-				temporary_label($HUD.get_node("GoodHitboxLabel"), 1.5)
+				temporary_label($HUD.get_node("GoodHitboxLabel"), 1.0)
 				good_score()
 	elif inside_good_hitbox && !inside_perfect_hitbox:
 			if Input.is_action_pressed("Down") && can_score_good:
 				can_score_good = false #prevents multiscoring on frames
 				can_score_perfect = false #prevents multiscoring on frames
-				temporary_label($HUD.get_node("GoodHitboxLabel"), 1.5)
+				temporary_label($HUD.get_node("GoodHitboxLabel"), 1.0)
 				good_score()
 	elif inside_perfect_hitbox:
 			if Input.is_action_pressed("Jump") && can_score_perfect:
 				can_score_perfect = false #prevents multiscoring on frames
 				can_score_good = false #prevents multiscoring on frames
-				temporary_label($HUD.get_node("PerfectHitboxLabel"), 1.5)
+				temporary_label($HUD.get_node("PerfectHitboxLabel"), 1.0)
 				perfect_score()
 	elif inside_perfect_hitbox:
 		if Input.is_action_pressed("Down") && can_score_perfect:
 				can_score_perfect = false #prevents multiscoring on frames
 				can_score_good = false #prevents multiscoring on frames
-				temporary_label($HUD.get_node("PerfectHitboxLabel"), 1.5)
+				temporary_label($HUD.get_node("PerfectHitboxLabel"), 1.0)
 				perfect_score()
 	
 func show_score():
