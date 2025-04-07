@@ -3,14 +3,14 @@
 [ext_resource type="FontFile" uid="uid://s15272omc2m3" path="res://assets/fonts/retro.ttf" id="1_l6cm7"]
 [ext_resource type="Texture2D" uid="uid://cec8df6fvcv7" path="res://assets/img/startscreen3.png" id="2_ekxnf"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tbwuq"]
-bg_color = Color(9.62615e-08, 0.982744, 0.126955, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xeevv"]
-bg_color = Color(1.63645e-06, 0.745061, 0.7686, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bqqt6"]
+bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wqhvx"]
-bg_color = Color(0, 0.402844, 0.09111, 1)
+bg_color = Color(0.647059, 0.713726, 0.729412, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ekxnf"]
+bg_color = Color(0, 0, 0, 1)
 
 [node name="MainMenu" type="CanvasLayer"]
 
@@ -26,10 +26,11 @@ offset_right = 127.0
 offset_bottom = 27.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_hover_color = Color(0.647059, 0.713726, 0.729412, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_l6cm7")
 theme_override_font_sizes/font_size = 40
-theme_override_styles/hover = SubResource("StyleBoxFlat_tbwuq")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_xeevv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_bqqt6")
 theme_override_styles/normal = SubResource("StyleBoxFlat_wqhvx")
 text = "START"
 
@@ -46,13 +47,13 @@ offset_bottom = 155.0
 grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 2
+theme_override_colors/font_hover_color = Color(0.647059, 0.713726, 0.729412, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_l6cm7")
 theme_override_font_sizes/font_size = 40
-theme_override_styles/hover = SubResource("StyleBoxFlat_tbwuq")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_xeevv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ekxnf")
 theme_override_styles/normal = SubResource("StyleBoxFlat_wqhvx")
 toggle_mode = false
-action_mode = 1
 text = "CONTROLS"
 flat = false
 item_count = 2
