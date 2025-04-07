@@ -1,17 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://dgfj7hkd58lt3"]
-
-[ext_resource type="Texture2D" uid="uid://cahf3b7jxfawu" path="res://assets/img/obstacles v3 + Arrow NEW/objects v3 7.png" id="1_40qjq"]
+[gd_scene load_steps=2 format=3 uid="uid://dgfj7hkd58lt3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_trceg"]
 size = Vector2(42.6667, 42.6667)
 
 [node name="Arrow Up Good" type="Area2D"]
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture_filter = 1
-position = Vector2(1536, 448)
-scale = Vector2(3, 3)
-texture = ExtResource("1_40qjq")
 
 [node name="Good Hitbox" type="CollisionShape2D" parent="."]
 texture_filter = 1
