@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://couj4aeei2su8"
+path="res://.godot/imported/B1T_First Level_M_04IV25@NAGA.ogg-3411add4551192467ca990c8a7d730ae.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/B1T_First Level_M_04IV25@NAGA.ogg"
+dest_files=["res://.godot/imported/B1T_First Level_M_04IV25@NAGA.ogg-3411add4551192467ca990c8a7d730ae.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

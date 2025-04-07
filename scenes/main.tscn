@@ -4,7 +4,6 @@
 [ext_resource type="Script" uid="uid://rqnpqcj43e85" path="res://scripts/main.gd" id="1_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://0hq8euhl8fk1" path="res://scenes/ground.tscn" id="2_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://dq5kitkbpxa6u" path="res://scenes/crab.tscn" id="3_tbgi4"]
-[ext_resource type="AudioStream" uid="uid://cfe5gywm1hiou" path="res://assets/audio/B1T_First Level_D_04IV25@NAGA.ogg" id="5_tefeu"]
 [ext_resource type="PackedScene" uid="uid://bpunnmdbrunrw" path="res://scenes/hud.tscn" id="6_tefeu"]
 [ext_resource type="Script" uid="uid://mry38476ou0" path="res://scripts/conductor.gd" id="7_o6xl0"]
 [ext_resource type="Script" uid="uid://drjngwi3s8udi" path="res://scripts/timestick_manager.gd" id="8_eb6dy"]
@@ -12,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://pr8pstyekyse" path="res://assets/img/arrows/arrowkeys1.png" id="9_eb6dy"]
 [ext_resource type="PackedScene" uid="uid://bh68wqviptbnv" path="res://scenes/main_menu.tscn" id="9_jbj1t"]
 [ext_resource type="Script" uid="uid://iwm1m5mko038" path="res://scenes/beat_manager.gd" id="10_jkv2x"]
+[ext_resource type="AudioStream" uid="uid://couj4aeei2su8" path="res://assets/audio/B1T_First Level_M_04IV25@NAGA.ogg" id="11_jbj1t"]
 [ext_resource type="PackedScene" uid="uid://dgfj7hkd58lt3" path="res://scenes/arrow_up_good.tscn" id="12_a8y0u"]
 [ext_resource type="PackedScene" uid="uid://yn5c381kwvov" path="res://scenes/arrow_up_perfect.tscn" id="13_jkv2x"]
 [ext_resource type="PackedScene" uid="uid://be7vxry3mdb80" path="res://scenes/arrow_down_good.tscn" id="14_jkv2x"]
@@ -160,7 +160,7 @@ process_mode = 2
 process_mode = 2
 
 [node name="Conductor" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_tefeu")
+stream = ExtResource("11_jbj1t")
 volume_db = -22.847
 script = ExtResource("7_o6xl0")
 

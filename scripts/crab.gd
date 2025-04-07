@@ -8,7 +8,6 @@ const HOVER_DURATION := 1.0 #time in sec to hover
 const APEX_THRESHOLD := 50.0 #Velocity near-zero threshold
 var hovering := false
 var hover_timer : float
-var can_jump : bool
 @export var max_health := 3
 @onready var current_health := max_health
 
@@ -24,20 +23,17 @@ func _physics_process(delta):
 		
 	#Landing contionals
 	if is_on_floor():
-		can_jump = true
 		if not get_parent().game_running: #get func from parent node(main.scn) to check if game started.
 			$AnimatedSprite2D.play("Idle")
 		else: #if game started:
 			$RunCol.disabled = false
-			if Input.is_action_just_pressed("Jump") && can_jump:
+			if Input.is_action_just_pressed("Jump"):
 				velocity.y = JUMP_VELOCITY
 				$JumpSound.play()
-				can_jump = false
 			else:
 				$AnimatedSprite2D.play("Run")
 	#While midair/dive
 	elif !is_on_floor():
-			can_jump = false
 			$RunCol.disabled = false
 			if Input.is_action_just_pressed("Down"):
 				velocity.y = DIVE_VELOCITY
@@ -48,12 +44,9 @@ func _physics_process(delta):
 			if Input.is_action_pressed("Jump"):
 				if velocity.y > -MAX_JUMP_VELOCITY:
 					velocity.y = max(velocity.y, -MAX_JUMP_VELOCITY)
-				else:
-					velocity.y = -MAX_JUMP_VELOCITY  # Apply the maximum jump velocity to avoid higher bounces
-
+					
 	else:
 		$AnimatedSprite2D.play("Jump")
-	
 	move_and_slide()
 		
 func start_hover():
