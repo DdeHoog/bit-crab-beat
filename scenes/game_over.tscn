@@ -12,6 +12,7 @@ bg_color = Color(1.63645e-06, 0.745061, 0.7686, 1)
 bg_color = Color(0.647059, 0.713726, 0.729412, 1)
 
 [node name="GameOver" type="CanvasLayer"]
+process_mode = 2
 
 [node name="RestartButton" type="Button" parent="."]
 anchors_preset = 8

@@ -143,7 +143,6 @@ right_timestick_texture = ExtResource("9_muem4")
 process_mode = 2
 
 [node name="GameOver" parent="." instance=ExtResource("8_ya4ey")]
-process_mode = 2
 
 [node name="Conductor" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_jbj1t")

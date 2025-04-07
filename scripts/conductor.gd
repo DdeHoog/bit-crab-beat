@@ -49,6 +49,7 @@ func _report_beat():
 			if current_beat_in_measure > beats_in_measure:
 				current_beat_in_measure = 1
 			emit_signal("beat_in_song", song_position_in_beats)
+			print_debug(song_position_in_beats)
 			emit_signal("beat_in_measure", current_beat_in_measure)
 		#print(current_beat_in_measure)
 		last_reported_beat = song_position_in_beats
