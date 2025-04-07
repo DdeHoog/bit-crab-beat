@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://pr8pstyekyse" path="res://assets/img/arrows/arrowkeys1.png" id="9_eb6dy"]
 [ext_resource type="PackedScene" uid="uid://bh68wqviptbnv" path="res://scenes/main_menu.tscn" id="9_jbj1t"]
 [ext_resource type="Script" uid="uid://iwm1m5mko038" path="res://scenes/beat_manager.gd" id="10_jkv2x"]
-[ext_resource type="AudioStream" uid="uid://couj4aeei2su8" path="res://assets/audio/B1T_First Level_M_04IV25@NAGA.ogg" id="11_jbj1t"]
+[ext_resource type="AudioStream" uid="uid://d4m8bbybdrm2t" path="res://assets/audio/B1T_First Level_Mr1_04IV25@NAGA.ogg" id="11_jbj1t"]
 [ext_resource type="PackedScene" uid="uid://dgfj7hkd58lt3" path="res://scenes/arrow_up_good.tscn" id="12_a8y0u"]
 [ext_resource type="PackedScene" uid="uid://yn5c381kwvov" path="res://scenes/arrow_up_perfect.tscn" id="13_jkv2x"]
 [ext_resource type="PackedScene" uid="uid://be7vxry3mdb80" path="res://scenes/arrow_down_good.tscn" id="14_jkv2x"]
