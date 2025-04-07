@@ -16,6 +16,9 @@ const TimeStickScene = preload("res://scenes/time_stick.tscn")
 # Example paths: "../Conductor", "/root/Game/ConductorNode"
 @onready var conductor: AudioStreamPlayer = get_node("/root/Main/Conductor") # ADJUST PATH
 
+#for timing animation to the beat
+@onready var beat_bar: AnimatedSprite2D = get_node("/root/Main/HUD/BeatIndicator")
+
 # --- Internal Variables ---
 var screen_center_x: float
 var spawn_distance_from_center: float
@@ -50,7 +53,12 @@ func _ready() -> void:
 
 # Connected to the Conductor's signal
 func _on_conductor_beat_in_song(position): # position is the beat number
-	print("DEBUG: Beat signal received! Beat:", position) # <-- ADD THIS LINE
+	#print("DEBUG: Beat signal received! Beat:", position) # <-- ADD THIS LINE
+	if position % 2 == 0:
+			beat_bar.play("Beat0")
+	elif position % 2 == 1:
+			beat_bar.play("Beat1")
+	
 	spawn_arrow_pair()
 
 

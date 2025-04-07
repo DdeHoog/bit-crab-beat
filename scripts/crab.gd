@@ -12,7 +12,6 @@ var hover_timer : float
 @onready var current_health := max_health
 
 
-
 #Called every frame 'delta' is elapsed tiem since the previous frame.
 func _physics_process(delta):
 	if not hovering:
@@ -32,6 +31,7 @@ func _physics_process(delta):
 				$AnimatedSprite2D.play("Jump")
 				$JumpSound.play()
 			else:
+				
 				$AnimatedSprite2D.play("Run")
 	#While midair/dive
 	elif !is_on_floor():
