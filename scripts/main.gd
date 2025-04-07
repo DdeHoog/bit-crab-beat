@@ -1,5 +1,6 @@
 extends Node
 
+
 #game variables 
 const START_SPEED : float = 213.34 * 2 #Starting off speed 
 const MAX_SPEED : int = 1000 #Define a max speed, incase we increase speed overtime, added limit.
@@ -16,10 +17,12 @@ var inside_good_hitbox := false #Vars to check which hitbox the player box is in
 var inside_perfect_hitbox := false
 var can_score_good := true
 var can_score_perfect := true
+var frames := 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	screen_size = get_window().size #get the window size
+	#frames = get_monitor(Performance.TIME_FPS)
 	main_menu()
 	
 func main_menu():
@@ -28,7 +31,6 @@ func main_menu():
 	$GameOver.hide()
 	$HUD/StartLabel.hide()
 	for i in $Backgrounds.get_children():
-		print(i)
 		i.hide()
 	$Ground.hide()
 	check_high_score()
@@ -82,6 +84,8 @@ func _process(delta):
 	else:
 		if Input.is_action_pressed("Start"):#if game not running wait for player input.
 				$Conductor.play()
+				#$HUD.get_node("BeatIndicator").play("Beat")
+				#$HUD.get_node("BeatIndicator").SetAnimationSpeed("Beat", 1.76)
 				game_running = true
 				$HUD.get_node("StartLabel").hide()	
 	

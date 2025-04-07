@@ -1,6 +1,27 @@
-[gd_scene load_steps=2 format=3 uid="uid://bpunnmdbrunrw"]
+[gd_scene load_steps=5 format=3 uid="uid://bpunnmdbrunrw"]
 
 [ext_resource type="FontFile" uid="uid://s15272omc2m3" path="res://assets/fonts/retro.ttf" id="1_ahhtf"]
+[ext_resource type="Texture2D" uid="uid://cmw87fkk8xx18" path="res://assets/img/spacebar beat/spacebar beat1.png" id="2_5ysmq"]
+[ext_resource type="Texture2D" uid="uid://cgkmhfeg30t5c" path="res://assets/img/spacebar beat/spacebar beat2.png" id="3_6fi6k"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uo2fv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_5ysmq")
+}],
+"loop": true,
+"name": &"Beat0",
+"speed": 1.76
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_6fi6k")
+}],
+"loop": true,
+"name": &"Beat1",
+"speed": 1.76
+}]
 
 [node name="HUD" type="CanvasLayer"]
 
@@ -81,3 +102,12 @@ theme_override_font_sizes/font_size = 40
 text = "PERFECT TIMING! +50"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="BeatIndicator" type="AnimatedSprite2D" parent="."]
+z_index = 1
+texture_filter = 1
+position = Vector2(571, 680)
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_uo2fv")
+animation = &"Beat0"
+autoplay = "Beat0"
