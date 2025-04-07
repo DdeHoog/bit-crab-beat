@@ -18,6 +18,8 @@ var inside_perfect_hitbox := false
 var can_score_good := true
 var can_score_perfect := true
 var frames := 0
+var total_beat := 0
+var max_beat := 128
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -30,6 +32,7 @@ func main_menu():
 	$Crab.hide()
 	$GameOver.hide()
 	$HUD/StartLabel.hide()
+	$HUD/BeatIndicator.hide()
 	for i in $Backgrounds.get_children():
 		i.hide()
 	$Ground.hide()
@@ -44,8 +47,10 @@ func game_over():
 	check_high_score()#puts new highscore on the screen
 	get_tree().paused = true
 	game_running = false
+	$HUD/BeatIndicator.hide()
 	$GameOver.show()
 	$GameOver.get_node("RestartButton").pressed.connect(new_game)#Restart trigger
+	$GameOver.get_node("MenuButton").pressed.connect(main_menu)#Menu trigger
 	
 func new_game():
 	#Reset variables
@@ -83,6 +88,7 @@ func _process(delta):
 		show_score()
 	else:
 		if Input.is_action_pressed("Start"):#if game not running wait for player input.
+				$HUD/BeatIndicator.show()
 				$Conductor.play()
 				#$HUD.get_node("BeatIndicator").play("Beat")
 				#$HUD.get_node("BeatIndicator").SetAnimationSpeed("Beat", 1.76)
@@ -115,6 +121,9 @@ func _process(delta):
 				temporary_label($HUD.get_node("PerfectHitboxLabel"), 1.0)
 				perfect_score()
 	
+	if total_beat >= max_beat:
+		game_over()
+	
 func show_score():
 	#Get the scorelabel from the hud scene, 
 	$HUD.get_node("ScoreLabel").text = "SCORE: " + str(score)
@@ -142,6 +151,7 @@ func _on_conductor_beat_in_song(position):
 			score +=10
 			temporary_label($HUD.get_node("BonusScoreLabel"), 1.5)
 	score += 1
+	total_beat += 1
 	
 	
 #Functions to check inside which hitbox we are, the hitboxes are split over 2 area shapes.
