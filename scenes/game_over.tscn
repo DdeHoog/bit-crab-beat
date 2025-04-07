@@ -14,27 +14,6 @@ bg_color = Color(0.647059, 0.713726, 0.729412, 1)
 [node name="GameOver" type="CanvasLayer"]
 process_mode = 2
 
-[node name="RestartButton" type="Button" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -127.5
-offset_top = -29.5
-offset_right = 127.5
-offset_bottom = 29.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_hover_color = Color(0.647059, 0.713726, 0.729412, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_xeevv")
-theme_override_font_sizes/font_size = 40
-theme_override_styles/hover = SubResource("StyleBoxFlat_tbwuq")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_xeevv")
-theme_override_styles/normal = SubResource("StyleBoxFlat_wqhvx")
-text = "RESTART"
-
 [node name="MenuButton" type="Button" parent="."]
 anchors_preset = 8
 anchor_left = 0.5

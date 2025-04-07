@@ -51,7 +51,6 @@ func game_over():
 	$HUD/BeatIndicator.hide()
 	$GameOver.show()
 	total_beat = 1
-	$GameOver.get_node("RestartButton").pressed.connect(new_game)#Restart trigger
 	$GameOver.get_node("MenuButton").pressed.connect(main_menu)#Menu trigger
 	
 func new_game():
