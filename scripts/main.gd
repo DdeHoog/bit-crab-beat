@@ -19,7 +19,7 @@ var can_score_good := true
 var can_score_perfect := true
 var frames := 0
 var total_beat := 1
-var max_beat := 129
+var max_beat := 130
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -62,6 +62,15 @@ func new_game():
 	game_running = false #prevent game autostarting
 	get_tree().paused = false #unpauses game after gameover or gamestart
 	
+	# --- Call the Conductor's reset function ---
+	if $Conductor: # Good practice to check if node exists
+		$Conductor.reset()
+	else:
+		printerr("Main: Conductor node not found during new_game!")
+		
+	if $TimestickManager: # Replace with actual node path/name
+		$TimeStickManager.reset()
+	
 	#To reset player & camera
 	CRAB_START_POS = Vector2i((screen_size.x/4), 485) # Set crab start position at 1/4th of the screen x width
 	CAM_START_POS = get_window().size/2 #set camera deadcenter of the gamewindow size
@@ -90,7 +99,7 @@ func _process(delta):
 	else:
 		if Input.is_action_pressed("Start"):#if game not running wait for player input.
 				$HUD/BeatIndicator.show()
-				$Conductor.play()
+				$Conductor.play_from_beat(35)
 				#$HUD.get_node("BeatIndicator").play("Beat")
 				#$HUD.get_node("BeatIndicator").SetAnimationSpeed("Beat", 1.76)
 				game_running = true

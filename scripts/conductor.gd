@@ -51,7 +51,6 @@ func _report_beat():
 			emit_signal("beat_in_song", song_position_in_beats)
 			print_debug(song_position_in_beats)
 			emit_signal("beat_in_measure", current_beat_in_measure)
-			print()
 		#print(current_beat_in_measure)
 		last_reported_beat = song_position_in_beats
 		current_beat_in_measure += 1
@@ -82,3 +81,22 @@ func _on_StartTimer_timeout():
 		play()
 		$StartTimer.stop()
 	_report_beat()
+	
+	# --- Add this function inside Conductor.gd ---
+func reset():
+	# Stop playback if it's somehow still going
+	stop()
+
+	# Reset all the state tracking variables to their initial values
+	song_position = 0.0
+	song_position_in_beats = 0
+	last_reported_beat = -1 # Reset to -1 to ensure beat 0 is reported
+	current_beat_in_measure = 1
+	first_beat_reported = false # Reset the flag for the first beat special case
+
+	# Optional: Reset offset timer stuff if you use play_with_beat_offset
+	beats_before_start = 0
+	if has_node("StartTimer"): # Check if the optional StartTimer node exists
+		$StartTimer.stop()
+
+	print_debug("Conductor state reset") # Optional debug message
