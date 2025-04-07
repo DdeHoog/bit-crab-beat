@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dgfj7hkd58lt3"]
 
-[ext_resource type="Texture2D" uid="uid://pr8pstyekyse" path="res://assets/img/arrows/arrowkeys1.png" id="1_40qjq"]
+[ext_resource type="Texture2D" uid="uid://cahf3b7jxfawu" path="res://assets/img/obstacles v3 + Arrow NEW/objects v3 7.png" id="1_40qjq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_trceg"]
 size = Vector2(26.3333, 42.6667)

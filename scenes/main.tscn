@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://fyslyx0wbxu4"]
+[gd_scene load_steps=18 format=3 uid="uid://fyslyx0wbxu4"]
 
 [ext_resource type="PackedScene" uid="uid://4mytnumcpbra" path="res://scenes/bg.tscn" id="1_sugp2"]
 [ext_resource type="Script" uid="uid://rqnpqcj43e85" path="res://scripts/main.gd" id="1_tbgi4"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://1p3fkeu6qn7j" path="res://scenes/game_over.tscn" id="8_ya4ey"]
 [ext_resource type="Texture2D" uid="uid://pr8pstyekyse" path="res://assets/img/arrows/arrowkeys1.png" id="9_eb6dy"]
 [ext_resource type="PackedScene" uid="uid://bh68wqviptbnv" path="res://scenes/main_menu.tscn" id="9_jbj1t"]
+[ext_resource type="Texture2D" uid="uid://miqjmju22v03" path="res://assets/img/spacebar beat/white dot.png" id="9_muem4"]
 [ext_resource type="Script" uid="uid://iwm1m5mko038" path="res://scenes/beat_manager.gd" id="10_jkv2x"]
 [ext_resource type="AudioStream" uid="uid://d4m8bbybdrm2t" path="res://assets/audio/B1T_First Level_Mr1_04IV25@NAGA.ogg" id="11_jbj1t"]
 [ext_resource type="PackedScene" uid="uid://dgfj7hkd58lt3" path="res://scenes/arrow_up_good.tscn" id="12_a8y0u"]
@@ -150,8 +151,8 @@ texture = ExtResource("9_eb6dy")
 position = Vector2(283, 500)
 scale = Vector2(0.5, 0.5)
 script = ExtResource("8_eb6dy")
-left_timestick_texture = ExtResource("9_eb6dy")
-right_timestick_texture = ExtResource("9_eb6dy")
+left_timestick_texture = ExtResource("9_muem4")
+right_timestick_texture = ExtResource("9_muem4")
 
 [node name="MainMenu" parent="." instance=ExtResource("9_jbj1t")]
 process_mode = 2
