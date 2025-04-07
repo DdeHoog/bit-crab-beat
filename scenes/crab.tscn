@@ -112,3 +112,9 @@ volume_db = -10.0
 [node name="DiveSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_hj1h3")
 volume_db = -10.0
+
+[node name="HoverTimer" type="Timer" parent="."]
+wait_time = 0.6
+one_shot = true
+
+[connection signal="timeout" from="HoverTimer" to="." method="end_hover"]

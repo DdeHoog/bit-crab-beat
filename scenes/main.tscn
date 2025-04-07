@@ -153,6 +153,7 @@ script = ExtResource("7_o6xl0")
 [node name="Arrows" type="Node" parent="."]
 
 [node name="Arrow Up Group 1 - duplicate this for more" type="Area2D" parent="Arrows"]
+position = Vector2(64, 0)
 metadata/_edit_group_ = true
 
 [node name="Arrow Up Good" parent="Arrows/Arrow Up Group 1 - duplicate this for more" instance=ExtResource("12_a8y0u")]
@@ -160,8 +161,62 @@ position = Vector2(-256, 0)
 
 [node name="Arrow Up Perfect" parent="Arrows/Arrow Up Group 1 - duplicate this for more" instance=ExtResource("13_jkv2x")]
 
+[node name="Arrow Up Group 1 - duplicate this for more2" type="Area2D" parent="Arrows"]
+position = Vector2(576, 0)
+metadata/_edit_group_ = true
+
+[node name="Arrow Up Good" parent="Arrows/Arrow Up Group 1 - duplicate this for more2" instance=ExtResource("12_a8y0u")]
+position = Vector2(-256, 0)
+
+[node name="Arrow Up Perfect" parent="Arrows/Arrow Up Group 1 - duplicate this for more2" instance=ExtResource("13_jkv2x")]
+
+[node name="Arrow Up Group 1 - duplicate this for more3" type="Area2D" parent="Arrows"]
+position = Vector2(1088, 0)
+metadata/_edit_group_ = true
+
+[node name="Arrow Up Good" parent="Arrows/Arrow Up Group 1 - duplicate this for more3" instance=ExtResource("12_a8y0u")]
+position = Vector2(-256, 0)
+
+[node name="Arrow Up Perfect" parent="Arrows/Arrow Up Group 1 - duplicate this for more3" instance=ExtResource("13_jkv2x")]
+
+[node name="Arrow Up Group 1 - duplicate this for more4" type="Area2D" parent="Arrows"]
+position = Vector2(1600, 0)
+metadata/_edit_group_ = true
+
+[node name="Arrow Up Good" parent="Arrows/Arrow Up Group 1 - duplicate this for more4" instance=ExtResource("12_a8y0u")]
+position = Vector2(-256, 0)
+
+[node name="Arrow Up Perfect" parent="Arrows/Arrow Up Group 1 - duplicate this for more4" instance=ExtResource("13_jkv2x")]
+
+[node name="Arrow Up Group 1 - duplicate this for more5" type="Area2D" parent="Arrows"]
+position = Vector2(1984, 0)
+metadata/_edit_group_ = true
+
+[node name="Arrow Up Good" parent="Arrows/Arrow Up Group 1 - duplicate this for more5" instance=ExtResource("12_a8y0u")]
+position = Vector2(-256, 0)
+
+[node name="Arrow Up Perfect" parent="Arrows/Arrow Up Group 1 - duplicate this for more5" instance=ExtResource("13_jkv2x")]
+
+[node name="Arrow Up Group 1 - duplicate this for more6" type="Area2D" parent="Arrows"]
+position = Vector2(2368, 0)
+metadata/_edit_group_ = true
+
+[node name="Arrow Up Good" parent="Arrows/Arrow Up Group 1 - duplicate this for more6" instance=ExtResource("12_a8y0u")]
+position = Vector2(-256, 0)
+
+[node name="Arrow Up Perfect" parent="Arrows/Arrow Up Group 1 - duplicate this for more6" instance=ExtResource("13_jkv2x")]
+
+[node name="Arrow Up Group 1 - duplicate this for more7" type="Area2D" parent="Arrows"]
+position = Vector2(2752, 0)
+metadata/_edit_group_ = true
+
+[node name="Arrow Up Good" parent="Arrows/Arrow Up Group 1 - duplicate this for more7" instance=ExtResource("12_a8y0u")]
+position = Vector2(-256, 0)
+
+[node name="Arrow Up Perfect" parent="Arrows/Arrow Up Group 1 - duplicate this for more7" instance=ExtResource("13_jkv2x")]
+
 [node name="Arrow Down Group 1 - duplicate this for more" type="Area2D" parent="Arrows"]
-position = Vector2(1, -128)
+position = Vector2(1088, -128)
 metadata/_edit_group_ = true
 
 [node name="Arrow Down Good" parent="Arrows/Arrow Down Group 1 - duplicate this for more" instance=ExtResource("14_jkv2x")]
@@ -177,6 +232,36 @@ metadata/_edit_group_ = true
 [connection signal="body_exited" from="Arrows/Arrow Up Group 1 - duplicate this for more/Arrow Up Good" to="." method="_on_arrow_up_good_body_exited"]
 [connection signal="body_entered" from="Arrows/Arrow Up Group 1 - duplicate this for more/Arrow Up Perfect" to="." method="_on_arrow_up_perfect_body_entered"]
 [connection signal="body_exited" from="Arrows/Arrow Up Group 1 - duplicate this for more/Arrow Up Perfect" to="." method="_on_arrow_up_perfect_body_exited"]
+[connection signal="body_entered" from="Arrows/Arrow Up Group 1 - duplicate this for more2" to="." method="_on_arrow_up_group_1__duplicate_this_for_more_body_entered"]
+[connection signal="body_entered" from="Arrows/Arrow Up Group 1 - duplicate this for more2/Arrow Up Good" to="." method="_on_arrow_up_good_body_entered"]
+[connection signal="body_exited" from="Arrows/Arrow Up Group 1 - duplicate this for more2/Arrow Up Good" to="." method="_on_arrow_up_good_body_exited"]
+[connection signal="body_entered" from="Arrows/Arrow Up Group 1 - duplicate this for more2/Arrow Up Perfect" to="." method="_on_arrow_up_perfect_body_entered"]
+[connection signal="body_exited" from="Arrows/Arrow Up Group 1 - duplicate this for more2/Arrow Up Perfect" to="." method="_on_arrow_up_perfect_body_exited"]
+[connection signal="body_entered" from="Arrows/Arrow Up Group 1 - duplicate this for more3" to="." method="_on_arrow_up_group_1__duplicate_this_for_more_body_entered"]
+[connection signal="body_entered" from="Arrows/Arrow Up Group 1 - duplicate this for more3/Arrow Up Good" to="." method="_on_arrow_up_good_body_entered"]
+[connection signal="body_exited" from="Arrows/Arrow Up Group 1 - duplicate this for more3/Arrow Up Good" to="." method="_on_arrow_up_good_body_exited"]
+[connection signal="body_entered" from="Arrows/Arrow Up Group 1 - duplicate this for more3/Arrow Up Perfect" to="." method="_on_arrow_up_perfect_body_entered"]
+[connection signal="body_exited" from="Arrows/Arrow Up Group 1 - duplicate this for more3/Arrow Up Perfect" to="." method="_on_arrow_up_perfect_body_exited"]
+[connection signal="body_entered" from="Arrows/Arrow Up Group 1 - duplicate this for more4" to="." method="_on_arrow_up_group_1__duplicate_this_for_more_body_entered"]
+[connection signal="body_entered" from="Arrows/Arrow Up Group 1 - duplicate this for more4/Arrow Up Good" to="." method="_on_arrow_up_good_body_entered"]
+[connection signal="body_exited" from="Arrows/Arrow Up Group 1 - duplicate this for more4/Arrow Up Good" to="." method="_on_arrow_up_good_body_exited"]
+[connection signal="body_entered" from="Arrows/Arrow Up Group 1 - duplicate this for more4/Arrow Up Perfect" to="." method="_on_arrow_up_perfect_body_entered"]
+[connection signal="body_exited" from="Arrows/Arrow Up Group 1 - duplicate this for more4/Arrow Up Perfect" to="." method="_on_arrow_up_perfect_body_exited"]
+[connection signal="body_entered" from="Arrows/Arrow Up Group 1 - duplicate this for more5" to="." method="_on_arrow_up_group_1__duplicate_this_for_more_body_entered"]
+[connection signal="body_entered" from="Arrows/Arrow Up Group 1 - duplicate this for more5/Arrow Up Good" to="." method="_on_arrow_up_good_body_entered"]
+[connection signal="body_exited" from="Arrows/Arrow Up Group 1 - duplicate this for more5/Arrow Up Good" to="." method="_on_arrow_up_good_body_exited"]
+[connection signal="body_entered" from="Arrows/Arrow Up Group 1 - duplicate this for more5/Arrow Up Perfect" to="." method="_on_arrow_up_perfect_body_entered"]
+[connection signal="body_exited" from="Arrows/Arrow Up Group 1 - duplicate this for more5/Arrow Up Perfect" to="." method="_on_arrow_up_perfect_body_exited"]
+[connection signal="body_entered" from="Arrows/Arrow Up Group 1 - duplicate this for more6" to="." method="_on_arrow_up_group_1__duplicate_this_for_more_body_entered"]
+[connection signal="body_entered" from="Arrows/Arrow Up Group 1 - duplicate this for more6/Arrow Up Good" to="." method="_on_arrow_up_good_body_entered"]
+[connection signal="body_exited" from="Arrows/Arrow Up Group 1 - duplicate this for more6/Arrow Up Good" to="." method="_on_arrow_up_good_body_exited"]
+[connection signal="body_entered" from="Arrows/Arrow Up Group 1 - duplicate this for more6/Arrow Up Perfect" to="." method="_on_arrow_up_perfect_body_entered"]
+[connection signal="body_exited" from="Arrows/Arrow Up Group 1 - duplicate this for more6/Arrow Up Perfect" to="." method="_on_arrow_up_perfect_body_exited"]
+[connection signal="body_entered" from="Arrows/Arrow Up Group 1 - duplicate this for more7" to="." method="_on_arrow_up_group_1__duplicate_this_for_more_body_entered"]
+[connection signal="body_entered" from="Arrows/Arrow Up Group 1 - duplicate this for more7/Arrow Up Good" to="." method="_on_arrow_up_good_body_entered"]
+[connection signal="body_exited" from="Arrows/Arrow Up Group 1 - duplicate this for more7/Arrow Up Good" to="." method="_on_arrow_up_good_body_exited"]
+[connection signal="body_entered" from="Arrows/Arrow Up Group 1 - duplicate this for more7/Arrow Up Perfect" to="." method="_on_arrow_up_perfect_body_entered"]
+[connection signal="body_exited" from="Arrows/Arrow Up Group 1 - duplicate this for more7/Arrow Up Perfect" to="." method="_on_arrow_up_perfect_body_exited"]
 [connection signal="body_entered" from="Arrows/Arrow Down Group 1 - duplicate this for more/Arrow Down Good" to="." method="_on_arrow_down_good_body_entered"]
 [connection signal="body_exited" from="Arrows/Arrow Down Group 1 - duplicate this for more/Arrow Down Good" to="." method="_on_arrow_down_good_body_exited"]
 [connection signal="body_entered" from="Arrows/Arrow Down Group 1 - duplicate this for more/Arrow Down Perfect" to="." method="_on_arrow_down_perfect_body_entered"]

@@ -12,6 +12,7 @@ var hovering := false
 var can_double_jump = true
 @export var max_health := 3
 @onready var current_health := max_health
+@onready var hover_timer_node = $HoverTimer
 
 # --- Beat Sync ---
 @export var conductor_node_path: NodePath = NodePath("../Conductor")
@@ -91,6 +92,7 @@ func _physics_process(delta):
 		$RunCol.disabled = false # Check if this is correct
 
 		if Input.is_action_just_pressed("Jump") and can_double_jump:
+			hover_timer_node.stop()
 			velocity.y = JUMP_VELOCITY
 			$AnimatedSprite2D.play("Jump")
 			$JumpSFX.play()
@@ -100,6 +102,7 @@ func _physics_process(delta):
 		elif Input.is_action_just_pressed("Down"): # Use elif
 			velocity.y = DIVE_VELOCITY
 			$DiveSFX.play()
+			hover_timer_node.stop()
 			end_hover()
 			# Optional: $AnimatedSprite2D.play("Dive")
 
@@ -111,7 +114,11 @@ func _physics_process(delta):
 func start_hover():
 	hovering = true
 	velocity.y = 0
-	get_tree().create_timer(HOVER_DURATION).timeout.connect(end_hover)
+	# --- Use the Timer Node ---
+	# Instead of creating a SceneTreeTimer, start your dedicated Timer node.
+	# It will use the Wait Time configured in the editor (0.6).
+	hover_timer_node.start()
+	# The timeout signal is already connected to end_hover via the editor.
 
 func end_hover():
 	hovering = false
