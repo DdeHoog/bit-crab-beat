@@ -4,24 +4,24 @@ extends Node
 #game variables 
 const START_SPEED : float = 213.34 * 2 #Starting off speed 
 const MAX_SPEED : int = 1000 #Define a max speed, incase we increase speed overtime, added limit.
-const SPEED_MODIFIER := 50000 #Needed to divide speed to not go giga fast in 2 sec - temp fix, remove later?
-const SCORE_MODIFIER := 1000 #Needed to divide the score to keep numbers reasonable - temp fix, remove later.
+const SPEED_MODIFIER : int = 50000 #Needed to divide speed to not go giga fast in 2 sec - temp fix, remove later?
+const SCORE_MODIFIER : int = 1000 #Needed to divide the score to keep numbers reasonable - temp fix, remove later.
 var CRAB_START_POS : Vector2i  
 var CAM_START_POS : Vector2i  
 var high_score : int
-var height := 1152
-var width := 832
+var height : int = 1152
+var width : int = 832
 var speed : int #allows for playerspeed to vary based on lvl/score/time
 var screen_size : Vector2i#prep variable for screensize
 var score : int #variable to keep track of score
 var game_running : bool #boolean to see if game is running or not
-var inside_good_hitbox := false #Vars to check which hitbox the player box is inside of
-var inside_perfect_hitbox := false
-var can_score_good := true
-var can_score_perfect := true
-var frames := 0
-var total_beat := 1
-var max_beat := 130
+var inside_good_hitbox : bool = false #Vars to check which hitbox the player box is inside of
+var inside_perfect_hitbox : bool = false
+var can_score_good : bool = true
+var can_score_perfect : bool = true
+var frames : int = 0
+var total_beat : int= 1
+var max_beat : int = 130
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

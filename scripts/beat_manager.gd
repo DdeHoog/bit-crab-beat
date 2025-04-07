@@ -5,8 +5,8 @@ extends Node
 
 var screen_center_x: float
 var distance_per_beat: float
-var beats_to_center := 1 #adjust this for number of steps to center/reset
-var beats_moved := 0
+var beats_to_center : int = 1 #adjust this for number of steps to center/reset
+var beats_moved : int = 0
 var is_moving := false
 
 # Called when the node enters the scene tree for the first time.

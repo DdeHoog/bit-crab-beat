@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://fyslyx0wbxu4"]
+[gd_scene load_steps=17 format=3 uid="uid://fyslyx0wbxu4"]
 
 [ext_resource type="PackedScene" uid="uid://4mytnumcpbra" path="res://scenes/bg.tscn" id="1_sugp2"]
 [ext_resource type="Script" uid="uid://rqnpqcj43e85" path="res://scripts/main.gd" id="1_tbgi4"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://miqjmju22v03" path="res://assets/img/spacebar beat/white dot.png" id="9_muem4"]
 [ext_resource type="AudioStream" uid="uid://d4m8bbybdrm2t" path="res://assets/audio/B1T_First Level_Mr1_04IV25@NAGA.ogg" id="11_jbj1t"]
 [ext_resource type="PackedScene" uid="uid://dgfj7hkd58lt3" path="res://scenes/arrow_up_good.tscn" id="12_a8y0u"]
+[ext_resource type="Script" uid="uid://cjevibboqhmlf" path="res://scripts/arrowManager.gd" id="12_jbj1t"]
 [ext_resource type="PackedScene" uid="uid://yn5c381kwvov" path="res://scenes/arrow_up_perfect.tscn" id="13_jkv2x"]
 [ext_resource type="PackedScene" uid="uid://be7vxry3mdb80" path="res://scenes/arrow_down_good.tscn" id="14_jkv2x"]
 [ext_resource type="PackedScene" uid="uid://cltgater8arui" path="res://scenes/arrow_down_perfect.tscn" id="15_jbj1t"]
@@ -83,9 +84,13 @@ stream = ExtResource("11_jbj1t")
 volume_db = -22.847
 script = ExtResource("7_o6xl0")
 
-[node name="Arrows" type="Node" parent="."]
+[node name="Arrows" type="Node" parent="." node_paths=PackedStringArray("crabObject", "arrowArray")]
+script = ExtResource("12_jbj1t")
+crabObject = NodePath("../Crab")
+arrowArray = [NodePath("Arrow Up Group 1 - duplicate this for more"), NodePath("Arrow Up Group 1 - duplicate this for more2"), NodePath("Arrow Up Group 1 - duplicate this for more3"), NodePath("Arrow Up Group 1 - duplicate this for more4"), NodePath("Arrow Up Group 1 - duplicate this for more5"), NodePath("Arrow Up Group 1 - duplicate this for more6"), NodePath("Arrow Up Group 1 - duplicate this for more7"), NodePath("Arrow Up Group 1 - duplicate this for more8"), NodePath("Arrow Down Group 1 - duplicate this for more"), NodePath("Arrow Down Group 1 - duplicate this for more2"), NodePath("Arrow Up Group 1 - duplicate this for more9")]
 
 [node name="Arrow Up Group 1 - duplicate this for more" type="Area2D" parent="Arrows"]
+visible = false
 position = Vector2(64, 0)
 metadata/_edit_group_ = true
 
@@ -95,6 +100,7 @@ position = Vector2(-256, 0)
 [node name="Arrow Up Perfect" parent="Arrows/Arrow Up Group 1 - duplicate this for more" instance=ExtResource("13_jkv2x")]
 
 [node name="Arrow Up Group 1 - duplicate this for more2" type="Area2D" parent="Arrows"]
+visible = false
 position = Vector2(576, 0)
 metadata/_edit_group_ = true
 
@@ -104,6 +110,7 @@ position = Vector2(-256, 0)
 [node name="Arrow Up Perfect" parent="Arrows/Arrow Up Group 1 - duplicate this for more2" instance=ExtResource("13_jkv2x")]
 
 [node name="Arrow Up Group 1 - duplicate this for more3" type="Area2D" parent="Arrows"]
+visible = false
 position = Vector2(1088, 0)
 metadata/_edit_group_ = true
 
@@ -113,6 +120,7 @@ position = Vector2(-256, 0)
 [node name="Arrow Up Perfect" parent="Arrows/Arrow Up Group 1 - duplicate this for more3" instance=ExtResource("13_jkv2x")]
 
 [node name="Arrow Up Group 1 - duplicate this for more4" type="Area2D" parent="Arrows"]
+visible = false
 position = Vector2(1600, 0)
 metadata/_edit_group_ = true
 
@@ -122,6 +130,7 @@ position = Vector2(-256, 0)
 [node name="Arrow Up Perfect" parent="Arrows/Arrow Up Group 1 - duplicate this for more4" instance=ExtResource("13_jkv2x")]
 
 [node name="Arrow Up Group 1 - duplicate this for more5" type="Area2D" parent="Arrows"]
+visible = false
 position = Vector2(2112, 0)
 metadata/_edit_group_ = true
 
@@ -131,6 +140,7 @@ position = Vector2(-256, 0)
 [node name="Arrow Up Perfect" parent="Arrows/Arrow Up Group 1 - duplicate this for more5" instance=ExtResource("13_jkv2x")]
 
 [node name="Arrow Up Group 1 - duplicate this for more6" type="Area2D" parent="Arrows"]
+visible = false
 position = Vector2(2624, 0)
 metadata/_edit_group_ = true
 
@@ -140,6 +150,7 @@ position = Vector2(-256, 0)
 [node name="Arrow Up Perfect" parent="Arrows/Arrow Up Group 1 - duplicate this for more6" instance=ExtResource("13_jkv2x")]
 
 [node name="Arrow Up Group 1 - duplicate this for more7" type="Area2D" parent="Arrows"]
+visible = false
 position = Vector2(3136, 0)
 metadata/_edit_group_ = true
 
@@ -149,6 +160,7 @@ position = Vector2(-256, 0)
 [node name="Arrow Up Perfect" parent="Arrows/Arrow Up Group 1 - duplicate this for more7" instance=ExtResource("13_jkv2x")]
 
 [node name="Arrow Up Group 1 - duplicate this for more8" type="Area2D" parent="Arrows"]
+visible = false
 position = Vector2(3392, -128)
 metadata/_edit_group_ = true
 
@@ -158,6 +170,7 @@ position = Vector2(-256, 0)
 [node name="Arrow Up Perfect" parent="Arrows/Arrow Up Group 1 - duplicate this for more8" instance=ExtResource("13_jkv2x")]
 
 [node name="Arrow Down Group 1 - duplicate this for more" type="Area2D" parent="Arrows"]
+visible = false
 position = Vector2(1088, -128)
 metadata/_edit_group_ = true
 
@@ -166,6 +179,7 @@ metadata/_edit_group_ = true
 [node name="Arrow Down Perfect" parent="Arrows/Arrow Down Group 1 - duplicate this for more" instance=ExtResource("15_jbj1t")]
 
 [node name="Arrow Down Group 1 - duplicate this for more2" type="Area2D" parent="Arrows"]
+visible = false
 position = Vector2(3392, -256)
 metadata/_edit_group_ = true
 
@@ -174,6 +188,7 @@ metadata/_edit_group_ = true
 [node name="Arrow Down Perfect" parent="Arrows/Arrow Down Group 1 - duplicate this for more2" instance=ExtResource("15_jbj1t")]
 
 [node name="Arrow Up Group 1 - duplicate this for more9" type="Area2D" parent="Arrows"]
+visible = false
 position = Vector2(4160, 0)
 metadata/_edit_group_ = true
 
@@ -183,6 +198,7 @@ position = Vector2(-256, 0)
 [node name="Arrow Up Perfect" parent="Arrows/Arrow Up Group 1 - duplicate this for more9" instance=ExtResource("13_jkv2x")]
 
 [node name="Arrow Up Group 1 - duplicate this for more10" type="Area2D" parent="Arrows"]
+visible = false
 position = Vector2(4672, 0)
 metadata/_edit_group_ = true
 
@@ -192,6 +208,7 @@ position = Vector2(-256, 0)
 [node name="Arrow Up Perfect" parent="Arrows/Arrow Up Group 1 - duplicate this for more10" instance=ExtResource("13_jkv2x")]
 
 [node name="Arrow Up Group 1 - duplicate this for more11" type="Area2D" parent="Arrows"]
+visible = false
 position = Vector2(5184, 0)
 metadata/_edit_group_ = true
 
@@ -201,6 +218,7 @@ position = Vector2(-256, 0)
 [node name="Arrow Up Perfect" parent="Arrows/Arrow Up Group 1 - duplicate this for more11" instance=ExtResource("13_jkv2x")]
 
 [node name="Arrow Up Group 1 - duplicate this for more12" type="Area2D" parent="Arrows"]
+visible = false
 position = Vector2(5696, 0)
 metadata/_edit_group_ = true
 
@@ -210,6 +228,7 @@ position = Vector2(-256, 0)
 [node name="Arrow Up Perfect" parent="Arrows/Arrow Up Group 1 - duplicate this for more12" instance=ExtResource("13_jkv2x")]
 
 [node name="Arrow Up Group 1 - duplicate this for more13" type="Area2D" parent="Arrows"]
+visible = false
 position = Vector2(6208, 0)
 metadata/_edit_group_ = true
 
@@ -219,6 +238,7 @@ position = Vector2(-256, 0)
 [node name="Arrow Up Perfect" parent="Arrows/Arrow Up Group 1 - duplicate this for more13" instance=ExtResource("13_jkv2x")]
 
 [node name="Arrow Up Group 1 - duplicate this for more14" type="Area2D" parent="Arrows"]
+visible = false
 position = Vector2(6720, 0)
 metadata/_edit_group_ = true
 
@@ -228,6 +248,7 @@ position = Vector2(-256, 0)
 [node name="Arrow Up Perfect" parent="Arrows/Arrow Up Group 1 - duplicate this for more14" instance=ExtResource("13_jkv2x")]
 
 [node name="Arrow Up Group 1 - duplicate this for more15" type="Area2D" parent="Arrows"]
+visible = false
 position = Vector2(7232, 0)
 metadata/_edit_group_ = true
 
@@ -237,6 +258,7 @@ position = Vector2(-256, 0)
 [node name="Arrow Up Perfect" parent="Arrows/Arrow Up Group 1 - duplicate this for more15" instance=ExtResource("13_jkv2x")]
 
 [node name="Arrow Up Group 1 - duplicate this for more16" type="Area2D" parent="Arrows"]
+visible = false
 position = Vector2(7488, -128)
 metadata/_edit_group_ = true
 
@@ -246,6 +268,7 @@ position = Vector2(-256, 0)
 [node name="Arrow Up Perfect" parent="Arrows/Arrow Up Group 1 - duplicate this for more16" instance=ExtResource("13_jkv2x")]
 
 [node name="Arrow Up Group 1 - duplicate this for more17" type="Area2D" parent="Arrows"]
+visible = false
 position = Vector2(8000, 0)
 metadata/_edit_group_ = true
 
@@ -255,6 +278,7 @@ position = Vector2(-256, 0)
 [node name="Arrow Up Perfect" parent="Arrows/Arrow Up Group 1 - duplicate this for more17" instance=ExtResource("13_jkv2x")]
 
 [node name="Arrow Up Group 1 - duplicate this for more18" type="Area2D" parent="Arrows"]
+visible = false
 position = Vector2(8000, 0)
 metadata/_edit_group_ = true
 
@@ -264,6 +288,7 @@ position = Vector2(-256, 0)
 [node name="Arrow Up Perfect" parent="Arrows/Arrow Up Group 1 - duplicate this for more18" instance=ExtResource("13_jkv2x")]
 
 [node name="Arrow Up Group 1 - duplicate this for more19" type="Area2D" parent="Arrows"]
+visible = false
 position = Vector2(8512, 0)
 metadata/_edit_group_ = true
 
@@ -273,6 +298,7 @@ position = Vector2(-256, 0)
 [node name="Arrow Up Perfect" parent="Arrows/Arrow Up Group 1 - duplicate this for more19" instance=ExtResource("13_jkv2x")]
 
 [node name="Arrow Up Group 1 - duplicate this for more20" type="Area2D" parent="Arrows"]
+visible = false
 position = Vector2(9024, 0)
 metadata/_edit_group_ = true
 
@@ -282,6 +308,7 @@ position = Vector2(-256, 0)
 [node name="Arrow Up Perfect" parent="Arrows/Arrow Up Group 1 - duplicate this for more20" instance=ExtResource("13_jkv2x")]
 
 [node name="Arrow Up Group 1 - duplicate this for more21" type="Area2D" parent="Arrows"]
+visible = false
 position = Vector2(9024, 0)
 metadata/_edit_group_ = true
 
@@ -291,6 +318,7 @@ position = Vector2(-256, 0)
 [node name="Arrow Up Perfect" parent="Arrows/Arrow Up Group 1 - duplicate this for more21" instance=ExtResource("13_jkv2x")]
 
 [node name="Arrow Up Group 1 - duplicate this for more22" type="Area2D" parent="Arrows"]
+visible = false
 position = Vector2(9792, 0)
 metadata/_edit_group_ = true
 
@@ -300,6 +328,7 @@ position = Vector2(-256, 0)
 [node name="Arrow Up Perfect" parent="Arrows/Arrow Up Group 1 - duplicate this for more22" instance=ExtResource("13_jkv2x")]
 
 [node name="Arrow Up Group 1 - duplicate this for more24" type="Area2D" parent="Arrows"]
+visible = false
 position = Vector2(10560, -128)
 metadata/_edit_group_ = true
 
@@ -309,6 +338,7 @@ position = Vector2(-256, 0)
 [node name="Arrow Up Perfect" parent="Arrows/Arrow Up Group 1 - duplicate this for more24" instance=ExtResource("13_jkv2x")]
 
 [node name="Arrow Up Group 1 - duplicate this for more23" type="Area2D" parent="Arrows"]
+visible = false
 position = Vector2(10304, 0)
 metadata/_edit_group_ = true
 
@@ -318,6 +348,7 @@ position = Vector2(-256, 0)
 [node name="Arrow Up Perfect" parent="Arrows/Arrow Up Group 1 - duplicate this for more23" instance=ExtResource("13_jkv2x")]
 
 [node name="Arrow Up Group 1 - duplicate this for more29" type="Area2D" parent="Arrows"]
+visible = false
 position = Vector2(11584, 0)
 metadata/_edit_group_ = true
 
@@ -327,6 +358,7 @@ position = Vector2(-256, 0)
 [node name="Arrow Up Perfect" parent="Arrows/Arrow Up Group 1 - duplicate this for more29" instance=ExtResource("13_jkv2x")]
 
 [node name="Arrow Up Group 1 - duplicate this for more26" type="Area2D" parent="Arrows"]
+visible = false
 position = Vector2(11072, 0)
 metadata/_edit_group_ = true
 
@@ -336,6 +368,7 @@ position = Vector2(-256, 0)
 [node name="Arrow Up Perfect" parent="Arrows/Arrow Up Group 1 - duplicate this for more26" instance=ExtResource("13_jkv2x")]
 
 [node name="Arrow Up Group 1 - duplicate this for more28" type="Area2D" parent="Arrows"]
+visible = false
 position = Vector2(12096, 0)
 metadata/_edit_group_ = true
 
@@ -345,6 +378,7 @@ position = Vector2(-256, 0)
 [node name="Arrow Up Perfect" parent="Arrows/Arrow Up Group 1 - duplicate this for more28" instance=ExtResource("13_jkv2x")]
 
 [node name="Arrow Up Group 1 - duplicate this for more31" type="Area2D" parent="Arrows"]
+visible = false
 position = Vector2(12608, 0)
 metadata/_edit_group_ = true
 
@@ -354,6 +388,7 @@ position = Vector2(-256, 0)
 [node name="Arrow Up Perfect" parent="Arrows/Arrow Up Group 1 - duplicate this for more31" instance=ExtResource("13_jkv2x")]
 
 [node name="Arrow Up Group 1 - duplicate this for more32" type="Area2D" parent="Arrows"]
+visible = false
 position = Vector2(13120, 0)
 metadata/_edit_group_ = true
 
@@ -363,6 +398,7 @@ position = Vector2(-256, 0)
 [node name="Arrow Up Perfect" parent="Arrows/Arrow Up Group 1 - duplicate this for more32" instance=ExtResource("13_jkv2x")]
 
 [node name="Arrow Up Group 1 - duplicate this for more33" type="Area2D" parent="Arrows"]
+visible = false
 position = Vector2(13248, -128)
 metadata/_edit_group_ = true
 
@@ -372,6 +408,7 @@ position = Vector2(-256, 0)
 [node name="Arrow Up Perfect" parent="Arrows/Arrow Up Group 1 - duplicate this for more33" instance=ExtResource("13_jkv2x")]
 
 [node name="Arrow Down Group 1 - duplicate this for more3" type="Area2D" parent="Arrows"]
+visible = false
 position = Vector2(5184, -128)
 metadata/_edit_group_ = true
 
@@ -380,6 +417,7 @@ metadata/_edit_group_ = true
 [node name="Arrow Down Perfect" parent="Arrows/Arrow Down Group 1 - duplicate this for more3" instance=ExtResource("15_jbj1t")]
 
 [node name="Arrow Down Group 1 - duplicate this for more4" type="Area2D" parent="Arrows"]
+visible = false
 position = Vector2(7488, -256)
 metadata/_edit_group_ = true
 
@@ -388,6 +426,7 @@ metadata/_edit_group_ = true
 [node name="Arrow Down Perfect" parent="Arrows/Arrow Down Group 1 - duplicate this for more4" instance=ExtResource("15_jbj1t")]
 
 [node name="Arrow Down Group 1 - duplicate this for more5" type="Area2D" parent="Arrows"]
+visible = false
 position = Vector2(8000, -128)
 metadata/_edit_group_ = true
 
@@ -396,6 +435,7 @@ metadata/_edit_group_ = true
 [node name="Arrow Down Perfect" parent="Arrows/Arrow Down Group 1 - duplicate this for more5" instance=ExtResource("15_jbj1t")]
 
 [node name="Arrow Down Group 1 - duplicate this for more6" type="Area2D" parent="Arrows"]
+visible = false
 position = Vector2(9024, -128)
 metadata/_edit_group_ = true
 
@@ -404,6 +444,7 @@ metadata/_edit_group_ = true
 [node name="Arrow Down Perfect" parent="Arrows/Arrow Down Group 1 - duplicate this for more6" instance=ExtResource("15_jbj1t")]
 
 [node name="Arrow Down Group 1 - duplicate this for more7" type="Area2D" parent="Arrows"]
+visible = false
 position = Vector2(9792, -128)
 metadata/_edit_group_ = true
 
@@ -412,6 +453,7 @@ metadata/_edit_group_ = true
 [node name="Arrow Down Perfect" parent="Arrows/Arrow Down Group 1 - duplicate this for more7" instance=ExtResource("15_jbj1t")]
 
 [node name="Arrow Down Group 1 - duplicate this for more8" type="Area2D" parent="Arrows"]
+visible = false
 position = Vector2(13120, -256)
 metadata/_edit_group_ = true
 
@@ -420,6 +462,7 @@ metadata/_edit_group_ = true
 [node name="Arrow Down Perfect" parent="Arrows/Arrow Down Group 1 - duplicate this for more8" instance=ExtResource("15_jbj1t")]
 
 [node name="Arrow Up Group 1 - duplicate this for more37" type="Area2D" parent="Arrows"]
+visible = false
 position = Vector2(14528, 0)
 metadata/_edit_group_ = true
 
@@ -429,6 +472,7 @@ position = Vector2(-256, 0)
 [node name="Arrow Up Perfect" parent="Arrows/Arrow Up Group 1 - duplicate this for more37" instance=ExtResource("13_jkv2x")]
 
 [node name="Arrow Down Group 1 - duplicate this for more12" type="Area2D" parent="Arrows"]
+visible = false
 position = Vector2(14400, -128)
 metadata/_edit_group_ = true
 
@@ -437,6 +481,7 @@ metadata/_edit_group_ = true
 [node name="Arrow Down Perfect" parent="Arrows/Arrow Down Group 1 - duplicate this for more12" instance=ExtResource("15_jbj1t")]
 
 [node name="Arrow Down Group 1 - duplicate this for more13" type="Area2D" parent="Arrows"]
+visible = false
 position = Vector2(14144, -128)
 metadata/_edit_group_ = true
 
@@ -445,6 +490,7 @@ metadata/_edit_group_ = true
 [node name="Arrow Down Perfect" parent="Arrows/Arrow Down Group 1 - duplicate this for more13" instance=ExtResource("15_jbj1t")]
 
 [node name="Arrow Up Group 1 - duplicate this for more34" type="Area2D" parent="Arrows"]
+visible = false
 position = Vector2(13888, 0)
 metadata/_edit_group_ = true
 
@@ -454,6 +500,7 @@ position = Vector2(-256, 0)
 [node name="Arrow Up Perfect" parent="Arrows/Arrow Up Group 1 - duplicate this for more34" instance=ExtResource("13_jkv2x")]
 
 [node name="Arrow Up Group 1 - duplicate this for more35" type="Area2D" parent="Arrows"]
+visible = false
 position = Vector2(14144, 0)
 metadata/_edit_group_ = true
 
@@ -463,6 +510,7 @@ position = Vector2(-256, 0)
 [node name="Arrow Up Perfect" parent="Arrows/Arrow Up Group 1 - duplicate this for more35" instance=ExtResource("13_jkv2x")]
 
 [node name="Arrow Down Group 1 - duplicate this for more9" type="Area2D" parent="Arrows"]
+visible = false
 position = Vector2(13760, -128)
 metadata/_edit_group_ = true
 
@@ -471,6 +519,7 @@ metadata/_edit_group_ = true
 [node name="Arrow Down Perfect" parent="Arrows/Arrow Down Group 1 - duplicate this for more9" instance=ExtResource("15_jbj1t")]
 
 [node name="Arrow Down Group 1 - duplicate this for more10" type="Area2D" parent="Arrows"]
+visible = false
 position = Vector2(11072, -128)
 metadata/_edit_group_ = true
 
@@ -479,6 +528,7 @@ metadata/_edit_group_ = true
 [node name="Arrow Down Perfect" parent="Arrows/Arrow Down Group 1 - duplicate this for more10" instance=ExtResource("15_jbj1t")]
 
 [node name="Arrow Down Group 1 - duplicate this for more11" type="Area2D" parent="Arrows"]
+visible = false
 position = Vector2(12096, -128)
 metadata/_edit_group_ = true
 

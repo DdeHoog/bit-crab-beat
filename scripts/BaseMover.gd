@@ -8,7 +8,7 @@ var modifier : int = -1
 
 @export_group("Settings")
 @export var reverse:bool = false
-@export var my_var: int = 5
+#@export var my_var: int = 5
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

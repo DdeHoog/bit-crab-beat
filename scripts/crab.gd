@@ -10,8 +10,8 @@ const APEX_THRESHOLD := 100.0
 var hovering := false
 # var hover_timer : float # Kept for reference
 var can_double_jump = true
-@export var max_health := 3
-@onready var current_health := max_health
+@export var max_health : int = 3
+@onready var current_health : int = max_health
 @onready var hover_timer_node = $HoverTimer
 
 # --- Beat Sync ---
