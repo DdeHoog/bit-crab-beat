@@ -9,8 +9,10 @@ const SCORE_MODIFIER := 1000 #Needed to divide the score to keep numbers reasona
 var CRAB_START_POS : Vector2i  
 var CAM_START_POS : Vector2i  
 var high_score : int
+var height := 1152
+var width := 832
 var speed : int #allows for playerspeed to vary based on lvl/score/time
-var screen_size : Vector2i #prep variable for screensize
+var screen_size : Vector2i#prep variable for screensize
 var score : int #variable to keep track of score
 var game_running : bool #boolean to see if game is running or not
 var inside_good_hitbox := false #Vars to check which hitbox the player box is inside of
@@ -23,7 +25,7 @@ var max_beat := 130
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	screen_size = get_window().size #get the window size
+	screen_size.x = height #get the window size
 	#frames = get_monitor(Performance.TIME_FPS)
 	main_menu()
 	
@@ -73,7 +75,7 @@ func new_game():
 	
 	#To reset player & camera
 	CRAB_START_POS = Vector2i((screen_size.x/4), 485) # Set crab start position at 1/4th of the screen x width
-	CAM_START_POS = get_window().size/2 #set camera deadcenter of the gamewindow size
+	CAM_START_POS = Vector2i(height, width)/2 #set camera deadcenter of the gamewindow size
 	$Crab.position = CRAB_START_POS #reset crab to starting position
 	$Camera2D.position = CAM_START_POS #reset cam back to start position
 	
