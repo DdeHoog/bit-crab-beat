@@ -27,7 +27,10 @@ func main_menu():
 	$Crab.hide()
 	$GameOver.hide()
 	$HUD/StartLabel.hide()
-	#$Backgrounds.hide()
+	for i in $Backgrounds.get_children():
+		print(i)
+		i.hide()
+	$Ground.hide()
 	check_high_score()
 	get_tree().paused = true
 	game_running = false
@@ -60,7 +63,9 @@ func new_game():
 	#reset hud
 	$MainMenu.hide()
 	$GameOver.hide()
-	#$Backgrounds.show()
+	for i in $Backgrounds.get_children():
+		i.show()
+	$Ground.show()
 	$HUD.show()
 	$HUD.get_node("StartLabel").show()
 	$Crab.show()
