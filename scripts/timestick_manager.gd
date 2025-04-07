@@ -85,3 +85,17 @@ func spawn_arrow_pair():
 # _process is likely not needed here unless you have other logic
 func _process(delta: float) -> void:
 	pass
+
+# --- Add this function ---
+func reset():
+	# Iterate through all direct children of this spawner node
+	for child in get_children():
+		# Optional but safer: Check if the child is actually a time stick
+		# This assumes your TimeStickScene's root node has a script attached
+		# or you can identify it by class name if it's a custom class.
+		# If TimeStickScene root is just Node2D, checking script is better.
+		if child.get_script() == TimeStickScene.get_script(): # Example check
+			child.queue_free()
+		# Or, if you don't need the check (assuming ONLY time sticks are children):
+		# child.queue_free()
+	print("TimeStickSpawner: Cleared existing time sticks.")

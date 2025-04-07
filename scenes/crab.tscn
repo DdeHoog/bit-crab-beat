@@ -99,10 +99,12 @@ autoplay = "Idle"
 [node name="RunCol" type="CollisionShape2D" parent="."]
 visibility_layer = 2
 position = Vector2(0.375, 4.375)
+scale = Vector2(0.2, 0.2)
 shape = SubResource("CapsuleShape2D_83q5x")
 
 [node name="DuckCol" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 4.375)
+scale = Vector2(0.2, 0.2)
 shape = SubResource("CapsuleShape2D_rftv6")
 
 [node name="JumpSFX" type="AudioStreamPlayer" parent="."]
