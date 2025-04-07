@@ -18,8 +18,8 @@ var inside_perfect_hitbox := false
 var can_score_good := true
 var can_score_perfect := true
 var frames := 0
-var total_beat := 0
-var max_beat := 128
+var total_beat := 1
+var max_beat := 129
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -47,8 +47,10 @@ func game_over():
 	check_high_score()#puts new highscore on the screen
 	get_tree().paused = true
 	game_running = false
+	$Conductor.stop()
 	$HUD/BeatIndicator.hide()
 	$GameOver.show()
+	total_beat = 1
 	$GameOver.get_node("RestartButton").pressed.connect(new_game)#Restart trigger
 	$GameOver.get_node("MenuButton").pressed.connect(main_menu)#Menu trigger
 	
