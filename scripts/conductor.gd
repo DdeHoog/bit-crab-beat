@@ -34,7 +34,7 @@ func _physics_process(_delta):
 	#calculate in beats where player is in song
 	if playing:
 		song_position = get_playback_position() + AudioServer.get_time_since_last_mix()
-		song_position -= AudioServer.get_output_latency()
+		#song_position -= AudioServer.get_output_latency()
 		song_position_in_beats = int(floor(song_position / sec_per_beat))
 		_report_beat()
 
