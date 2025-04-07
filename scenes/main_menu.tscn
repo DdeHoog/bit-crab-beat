@@ -1,0 +1,73 @@
+[gd_scene load_steps=5 format=3 uid="uid://bh68wqviptbnv"]
+
+[ext_resource type="FontFile" uid="uid://s15272omc2m3" path="res://assets/fonts/retro.ttf" id="1_l6cm7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tbwuq"]
+bg_color = Color(9.62615e-08, 0.982744, 0.126955, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xeevv"]
+bg_color = Color(1.63645e-06, 0.745061, 0.7686, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wqhvx"]
+bg_color = Color(0, 0.402844, 0.09111, 1)
+
+[node name="MainMenu" type="CanvasLayer"]
+
+[node name="TitleLabel" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -67.0
+offset_right = 67.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_l6cm7")
+theme_override_font_sizes/font_size = 60
+text = "Bit Crab Beat"
+
+[node name="StartButton" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -160.0
+offset_right = 127.0
+offset_bottom = -101.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_l6cm7")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/hover = SubResource("StyleBoxFlat_tbwuq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_xeevv")
+theme_override_styles/normal = SubResource("StyleBoxFlat_wqhvx")
+text = "START"
+
+[node name="MenuButton" type="MenuButton" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = 32.0
+offset_right = 127.0
+offset_bottom = 91.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 2
+theme_override_fonts/font = ExtResource("1_l6cm7")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/hover = SubResource("StyleBoxFlat_tbwuq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_xeevv")
+theme_override_styles/normal = SubResource("StyleBoxFlat_wqhvx")
+toggle_mode = false
+action_mode = 1
+text = "CONTROLS"
+flat = false
+item_count = 2
+popup/item_0/text = "Jump:  W, Space, Arrowkey up & A, X, B on controllers"
+popup/item_0/id = 0
+popup/item_1/text = "Dive: S, Arrowkey down, Down on joystick"
+popup/item_1/id = 1

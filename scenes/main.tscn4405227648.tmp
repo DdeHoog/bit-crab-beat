@@ -154,7 +154,6 @@ left_timestick_texture = ExtResource("9_eb6dy")
 right_timestick_texture = ExtResource("9_eb6dy")
 
 [node name="MainMenu" parent="." instance=ExtResource("9_jbj1t")]
-process_mode = 2
 
 [node name="GameOver" parent="." instance=ExtResource("8_ya4ey")]
 process_mode = 2
