@@ -35,8 +35,7 @@ func main_menu():
 	$GameOver.hide()
 	$HUD/StartLabel.hide()
 	$HUD/BeatIndicator.hide()
-	for i in $Backgrounds.get_children():
-		i.hide()
+	$Bg.hide()
 	$Ground.hide()
 	check_high_score()
 	get_tree().paused = true
@@ -82,8 +81,7 @@ func new_game():
 	#reset hud
 	$MainMenu.hide()
 	$GameOver.hide()
-	for i in $Backgrounds.get_children():
-		i.show()
+	$Bg.show()
 	$Ground.show()
 	$HUD.show()
 	$HUD.get_node("StartLabel").show()

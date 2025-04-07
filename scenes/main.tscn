@@ -19,77 +19,7 @@
 [node name="Main" type="Node"]
 script = ExtResource("1_tbgi4")
 
-[node name="Backgrounds" type="Node" parent="."]
-
-[node name="Bg" parent="Backgrounds" instance=ExtResource("1_sugp2")]
-
-[node name="Bg1" parent="Backgrounds/Bg" instance=ExtResource("1_sugp2")]
-
-[node name="Bg2" parent="Backgrounds" instance=ExtResource("1_sugp2")]
-offset = Vector2(2311.69, 0)
-transform = Transform2D(1, 0, 0, 1, 2311.69, 0)
-
-[node name="Bg2" parent="Backgrounds/Bg2" instance=ExtResource("1_sugp2")]
-
-[node name="Bg3" parent="Backgrounds" instance=ExtResource("1_sugp2")]
-offset = Vector2(4622.69, 0)
-transform = Transform2D(1, 0, 0, 1, 4622.69, 0)
-
-[node name="Bg3" parent="Backgrounds/Bg3" instance=ExtResource("1_sugp2")]
-
-[node name="Bg4" parent="Backgrounds" instance=ExtResource("1_sugp2")]
-offset = Vector2(6933.69, 0)
-transform = Transform2D(1, 0, 0, 1, 6933.69, 0)
-
-[node name="Bg4" parent="Backgrounds/Bg4" instance=ExtResource("1_sugp2")]
-
-[node name="Bg5" parent="Backgrounds" instance=ExtResource("1_sugp2")]
-offset = Vector2(9244.69, 0)
-transform = Transform2D(1, 0, 0, 1, 9244.69, 0)
-
-[node name="Bg5" parent="Backgrounds/Bg5" instance=ExtResource("1_sugp2")]
-
-[node name="Bg6" parent="Backgrounds" instance=ExtResource("1_sugp2")]
-offset = Vector2(11555.7, 0)
-transform = Transform2D(1, 0, 0, 1, 11555.7, 0)
-
-[node name="Bg6" parent="Backgrounds/Bg6" instance=ExtResource("1_sugp2")]
-
-[node name="Bg7" parent="Backgrounds" instance=ExtResource("1_sugp2")]
-offset = Vector2(13866.7, 0)
-transform = Transform2D(1, 0, 0, 1, 13866.7, 0)
-
-[node name="Bg7" parent="Backgrounds/Bg7" instance=ExtResource("1_sugp2")]
-
-[node name="Bg8" parent="Backgrounds" instance=ExtResource("1_sugp2")]
-offset = Vector2(16177.7, 0)
-transform = Transform2D(1, 0, 0, 1, 16177.7, 0)
-
-[node name="Bg8" parent="Backgrounds/Bg8" instance=ExtResource("1_sugp2")]
-
-[node name="Bg9" parent="Backgrounds" instance=ExtResource("1_sugp2")]
-offset = Vector2(18488.7, 0)
-transform = Transform2D(1, 0, 0, 1, 18488.7, 0)
-
-[node name="Bg9" parent="Backgrounds/Bg9" instance=ExtResource("1_sugp2")]
-
-[node name="Bg10" parent="Backgrounds" instance=ExtResource("1_sugp2")]
-offset = Vector2(18488.7, 0)
-transform = Transform2D(1, 0, 0, 1, 18488.7, 0)
-
-[node name="Bg10" parent="Backgrounds/Bg10" instance=ExtResource("1_sugp2")]
-
-[node name="Bg11" parent="Backgrounds" instance=ExtResource("1_sugp2")]
-offset = Vector2(20799.7, 0)
-transform = Transform2D(1, 0, 0, 1, 20799.7, 0)
-
-[node name="Bg11" parent="Backgrounds/Bg11" instance=ExtResource("1_sugp2")]
-
-[node name="Bg12" parent="Backgrounds" instance=ExtResource("1_sugp2")]
-offset = Vector2(23100.7, 0)
-transform = Transform2D(1, 0, 0, 1, 23100.7, 0)
-
-[node name="Bg12" parent="Backgrounds/Bg12" instance=ExtResource("1_sugp2")]
+[node name="Bg" parent="." instance=ExtResource("1_sugp2")]
 
 [node name="Ground" parent="." instance=ExtResource("2_jyhfs")]
 metadata/_edit_group_ = true
@@ -551,8 +481,6 @@ metadata/_edit_group_ = true
 [node name="Arrow Down Good" parent="Arrows/Arrow Down Group 1 - duplicate this for more11" instance=ExtResource("14_jkv2x")]
 
 [node name="Arrow Down Perfect" parent="Arrows/Arrow Down Group 1 - duplicate this for more11" instance=ExtResource("15_jbj1t")]
-
-[node name="Obstacles" type="Node" parent="."]
 
 [connection signal="beat_in_song" from="Conductor" to="." method="_on_conductor_beat_in_song"]
 [connection signal="beat_in_song" from="Conductor" to="HUD/TimestickManager" method="_on_conductor_beat_in_song"]
